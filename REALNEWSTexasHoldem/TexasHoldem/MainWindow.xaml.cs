@@ -24,21 +24,23 @@ namespace TexasHoldem {
         int PlayerBet;
         int CPUBet;
 
+        HoldemHand HoldemGame = new HoldemHand();
+
         public MainWindow() {
 
             InitializeComponent();
-            HoldemHand TellMe = new HoldemHand();
-            TellMe.Test();
+            HoldemGame.ShuffleDeck();
         }
 
         private void BtnRaise_Click(object sender, RoutedEventArgs e){
+
             PlayerMoney = Convert.ToInt32(txtbxPlayerMoney.Text);
             PlayerBet = Convert.ToInt32(txtbxPlayerBet.Text);
             CPUMoney = Convert.ToInt32(txtbxComputerMoney.Text);
             CPUBet = Convert.ToInt32(txtbxComputerBet.Text);
 
             if(PlayerBet > CPUBet)
-                {
+            {
                 PlayerBet = PlayerBet + CPUBet;
                 txtbxPlayerBet.Text = PlayerBet.ToString();
             }
