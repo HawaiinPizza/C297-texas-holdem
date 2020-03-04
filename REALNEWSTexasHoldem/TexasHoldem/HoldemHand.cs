@@ -257,6 +257,34 @@ namespace TexasHoldem {
 
                 HumanPlayerHand.CompareTo(PossibleOpposingPokerHands[z]);
             }
+            CheckForComb[5] = CompHand[0];
+            CheckForComb[6] = CompHand[1];
+
+            PossibleCards = GetPossibleCards(Field, ComputerHand);
+
+            PossibleOpposingPokerHands = new PokerHand[990];
+
+            IncrementedValueToKeepTrackOfPossibleOpposingPokerHands = 0;
+
+            //Get all possiple hands
+            for (int x = 0; x < Size; x++) {
+                for (int y = x; y < Size; y++) {
+
+                    PossibleOpposingPokerHands[IncrementedValueToKeepTrackOfPossibleOpposingPokerHands] = new PokerHand();
+                    CheckForComb[5] = PossibleCards[x];
+                    CheckForComb[6] = PossibleCards[y];
+                    PossibleOpposingPokerHands[IncrementedValueToKeepTrackOfPossibleOpposingPokerHands].SetHandValue(GetHand(CheckForComb));
+                    IncrementedValueToKeepTrackOfPossibleOpposingPokerHands++;
+                }
+            }
+
+            //Compare results
+            for (int z = 0; z < 990; z++)
+            {
+
+                ComputerPlayerHand.CompareTo(PossibleOpposingPokerHands[z]);
+            }
+
 
 
             CalculateOdds();
