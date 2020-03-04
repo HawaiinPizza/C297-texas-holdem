@@ -200,9 +200,9 @@ namespace TexasHoldem {
 
                     ////Console.WriteLine("Card {0} {1} Joins the fight with {2} others", Temp.Value, Temp.Suite, Count);
 
-                    //Now the Value of the card and the suit have been declared, Creating a card
-                    PossibleCard[Count] = Temp;
+                    //Now the Value of the card and the suit have been declared, Creating a card 
                     Count++;
+                    PossibleCard[Count] = Temp;
                 }
             }
 
@@ -232,8 +232,7 @@ namespace TexasHoldem {
             CheckForComb[6] = CompHand[1];
             ComputerPlayerHand.SetHandValue(GetHand(CheckForComb));
 
-            Card[] PossibleCardsHuman = GetPossibleCards(Field, PlayerHand);
-            Card[] PossibleCardsComputer = GetPossibleCards(Field, ComputerHand);
+            Card[] PossibleCards = GetPossibleCards(Field, PlayerHand);
 
             PokerHand[] PossibleOpposingPokerHands = new PokerHand[990];
 
@@ -245,29 +244,8 @@ namespace TexasHoldem {
                 for (int y = x; y < Size; y++) {
 
                     PossibleOpposingPokerHands[IncrementedValueToKeepTrackOfPossibleOpposingPokerHands] = new PokerHand();
-                    CheckForComb[5] = PossibleCardsHuman[x];
-                    CheckForComb[6] = PossibleCardsHuman[y];
-                    PossibleOpposingPokerHands[IncrementedValueToKeepTrackOfPossibleOpposingPokerHands].SetHandValue(GetHand(CheckForComb));
-                    IncrementedValueToKeepTrackOfPossibleOpposingPokerHands++;
-                }
-            }
-
-            //Compare results
-            for (int z = 0; z < 990; z++) {
-
-                HumanPlayerHand.CompareTo(PossibleOpposingPokerHands[z]);
-            }
-
-            IncrementedValueToKeepTrackOfPossibleOpposingPokerHands = 0;
-
-            //Get all possiple hands
-            Size = 44;
-            for (int x = 0; x < Size; x++) {
-                for (int y = x; y < Size; y++) {
-
-                    PossibleOpposingPokerHands[IncrementedValueToKeepTrackOfPossibleOpposingPokerHands] = new PokerHand();
-                    CheckForComb[5] = PossibleCardsComputer[x];
-                    CheckForComb[6] = PossibleCardsComputer[y];
+                    CheckForComb[5] = PossibleCards[x];
+                    CheckForComb[6] = PossibleCards[y];
                     PossibleOpposingPokerHands[IncrementedValueToKeepTrackOfPossibleOpposingPokerHands].SetHandValue(GetHand(CheckForComb));
                     IncrementedValueToKeepTrackOfPossibleOpposingPokerHands++;
                 }
@@ -277,7 +255,7 @@ namespace TexasHoldem {
             for (int z = 0; z < 990; z++)
             {
 
-                ComputerPlayerHand.CompareTo(PossibleOpposingPokerHands[z]);
+                HumanPlayerHand.CompareTo(PossibleOpposingPokerHands[z]);
             }
             CheckForComb[5] = CompHand[0];
             CheckForComb[6] = CompHand[1];
@@ -562,21 +540,23 @@ namespace TexasHoldem {
         public void Test()
         {
             //public static Card[] GetPossibleCards(Card[] Field, Card[] PlayerHand) {
-            //GetPossibleCards(Field, PlayerHand);
+            GetPossibleCards(Field, PlayerHand);
 
-            ShuffleDeck();
-
-            //Card[] Temp = new Card[7];
-            //Temp[0] = Field[0];
-            //Temp[1] = Field[1];
-            //Temp[2] = Field[2];
-            //Temp[3] = Field[3];
-            //Temp[4] = Field[4];
-            //Temp[5] = PlayerHand[0];
-            //Temp[6] = PlayerHand[1];
+            Card[] Temp = new Card[7];
+            Temp[0] = Field[0];
+            Temp[1] = Field[1];
+            Temp[2] = Field[2];
+            Temp[3] = Field[3];
+            Temp[4] = Field[4];
+            Temp[5] = PlayerHand[0];
+            Temp[6] = PlayerHand[1];
             //GetHand(Temp);
 
 
+            
+
+
+            
             //public void FindWinsDrawsAndLosses(Card[] Field, Card[] PlayerHand, Card[] CompHand) {
             FindWinsDrawsAndLosses(Field, PlayerHand, ComputerHand);
 
