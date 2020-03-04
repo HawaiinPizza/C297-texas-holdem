@@ -319,7 +319,7 @@ namespace TexasHoldem {
             //ComputerWinningOdds = Convert.ToDouble((ComputerPlayerHand.Loses / 990) * 100);
             ComputerWinningOdds = HumanLosingOdds;
             Console.WriteLine("The odds, ladies and zaki are {0} wins, {1} draws, {2} lsoes and {3} wins ofr CPU", HumanWinningOdds
-                , HumanLosingOdds, HumanDrawingOdds, ComputerWinningOdds );
+                , HumanDrawingOdds, HumanLosingOdds, ComputerWinningOdds );
             Console.WriteLine("The odds, ladies and zaki are {0} wins, {1} draws, {2} lsoes and ", HumanPlayerHand.Wins
                 , HumanPlayerHand.Draws, HumanPlayerHand.Loses);
         }
@@ -442,9 +442,11 @@ namespace TexasHoldem {
         public static HandValue[] GetHand(Card[] Arr, bool PrintCrap=false) {
 
 
-            HandValue[] HandComb = new HandValue[21];
+            int Size = 21;
+            HandValue[] HandComb = new HandValue[Size];
             int[,] CombinationIndex = new int[,]
-                {{1, 2, 3, 4, 5},
+                {
+                {1, 2, 3, 4, 5},
                 {1, 2, 3, 4, 6},
                 {1, 2, 3, 4, 7},
                 {1, 2, 3, 5, 6},
@@ -479,7 +481,7 @@ namespace TexasHoldem {
                 else
                     Console.WriteLine("Player Card is {0}", Arr[i].toString());
             }
-            for (int PosComb = 0; PosComb < 21; PosComb++)
+            for (int PosComb = 1; PosComb < Size; PosComb++)
             {
                 Card[] TempCardComb = new Card[5];
                 for (int i = 0; i < 5; i++)
@@ -488,7 +490,7 @@ namespace TexasHoldem {
                    TempCardComb[i] = Arr[CombinationIndex[PosComb,i]-1];
                     if (PrintCrap)
                     {
-                        Console.WriteLine("Comb Testing are {0} with value {1}", i,  Arr[CombinationIndex[PosComb, i] - 1].toString());
+                        Console.WriteLine("{2} Index Comb Testing are {0} with value {1}", i,  Arr[CombinationIndex[PosComb, i] - 1].toString(), PosComb);
                     }
                 }
 
@@ -496,7 +498,7 @@ namespace TexasHoldem {
 
                 // Used to calcuate score
                 PossibleHands Score = new PossibleHands();
-                Score = GetScore(ref Score);
+                Score = GetScore(ref Score, TempCardComb);
 
 
 
@@ -530,7 +532,7 @@ namespace TexasHoldem {
             return HandComb; ;
         }
 
-        public PossibleHands GetScore(ref PossibleHands Score)
+        public static PossibleHands GetScore(ref PossibleHands Score, Card[] TempCardComb)
         {
                 // Copied form this https://youtu.be/2aEqFJWwXUE
                 // Order the array, than count the number of occurences of each suit, value.
