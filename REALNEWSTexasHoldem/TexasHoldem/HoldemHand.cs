@@ -230,17 +230,6 @@ namespace TexasHoldem {
             // Damn it Zaki
             //HumanPlayerHand.SetHandValue(GetHand(CheckForComb));
             HumanPlayerHand.SetHandValue(GetHand(CheckForComb, true));
-            //Console.WriteLine("{0} {1}", PlayerHand[0].Value, PlayerHand[0].Suite  );
-            //Console.WriteLine("{0} {1}", PlayerHand[1].Value, PlayerHand[1].Suite  );
-
-
-            //Console.WriteLine("{0} {1}", Field[0].Value, Field[0].Suite  );
-            //Console.WriteLine("{0} {1}", Field[1].Value, Field[1].Suite  );
-            //Console.WriteLine("{0} {1}", Field[2].Value, Field[2].Suite  );
-            //Console.WriteLine("{0} {1}", Field[3].Value, Field[3].Suite  );
-            //Console.WriteLine("{0} {1}", Field[4].Value, Field[4].Suite  );
-
-
             CheckForComb[5] = CompHand[0];
             CheckForComb[6] = CompHand[1];
 
@@ -258,13 +247,12 @@ namespace TexasHoldem {
             //Get all possiple hands
             int Size = 44;
             for (int x = 0; x < Size; x++) {
-                //Console.WriteLine("NEW LINE");
                 for (int y = x; y < Size; y++) {
 
                     PossibleOpposingPokerHands[IncrementedValueToKeepTrackOfPossibleOpposingPokerHands] = new PokerHand();
                     CheckForComb[5] = PossibleCards[x];
                     CheckForComb[6] = PossibleCards[y];
-                   PossibleOpposingPokerHands[IncrementedValueToKeepTrackOfPossibleOpposingPokerHands].SetHandValue(GetHand(CheckForComb));
+                    PossibleOpposingPokerHands[IncrementedValueToKeepTrackOfPossibleOpposingPokerHands].SetHandValue(GetHand(CheckForComb));
                     IncrementedValueToKeepTrackOfPossibleOpposingPokerHands++;
                 }
             }
@@ -273,13 +261,12 @@ namespace TexasHoldem {
             for (int z = 0; z < 990; z++) {
 
                 HumanPlayerHand.CompareTo(PossibleOpposingPokerHands[z]);
-                //ComputerPlayerHand.CompareTo(PossibleOpposingPokerHands[z]);
+                ComputerPlayerHand.CompareTo(PossibleOpposingPokerHands[z]);
             }
 
 
 
             CalculateOdds();
-            //Console.WriteLine("FUCK YOUZAKI\n");
         }
 
         // Calculate the odds of win/draw/lose
@@ -290,8 +277,8 @@ namespace TexasHoldem {
             HumanDrawingOdds = Convert.ToDouble((HumanPlayerHand.Draws / 990) * 100);
             ComputerWinningOdds = Convert.ToDouble((ComputerPlayerHand.Wins / 990) * 100);
             //ComputerWinningOdds = HumanLosingOdds;
-            Console.WriteLine("The odds, ladies and zaki are \nwins\t{0}\ndraws\t{1}\nloses\t{2}", HumanWinningOdds
-                , HumanDrawingOdds, HumanLosingOdds );
+            Console.WriteLine("The odds, ladies and zaki are \nwins\t{0}\ndraws\t{1}\nloses\t{2}\nComputer\t{3}", HumanWinningOdds
+                , HumanDrawingOdds, HumanLosingOdds, ComputerWinningOdds );
         }
 
         // This is used to get the Hand Value
