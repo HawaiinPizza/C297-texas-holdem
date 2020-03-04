@@ -66,8 +66,8 @@ namespace TexasHoldem {
     public class HoldemHand {
 
         ////////////////////////////////// Variables ////////////////////////////////////////////
-        HumanPlayer TheHumanPlayer = new HumanPlayer(100.0, 10.0);
-        ComputerPlayer TheComputerPlayer = new ComputerPlayer(100.0, 10.0);
+        public HumanPlayer TheHumanPlayer = new HumanPlayer(100.0, 10.0);
+        public ComputerPlayer TheComputerPlayer = new ComputerPlayer(100.0, 10.0);
 
         PokerHand HumanPlayerHand = new PokerHand();
         PokerHand ComputerPlayerHand = new PokerHand();

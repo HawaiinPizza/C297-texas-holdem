@@ -21,7 +21,7 @@ namespace TexasHoldem {
 
         int PlayerMoney;
         int CPUMoney;
-        int PlayerBet;
+        double PlayerBet;
         int CPUBet;
 
         HoldemHand HoldemGame = new HoldemHand();
@@ -34,32 +34,26 @@ namespace TexasHoldem {
 
         private void BtnRaise_Click(object sender, RoutedEventArgs e){
 
-            PlayerMoney = Convert.ToInt32(txtbxPlayerMoney.Text);
-            PlayerBet = Convert.ToInt32(txtbxPlayerBet.Text);
-            CPUMoney = Convert.ToInt32(txtbxComputerMoney.Text);
-            CPUBet = Convert.ToInt32(txtbxComputerBet.Text);
+            if (HoldemGame.TheHumanPlayer.PlayerBetAmount == HoldemGame.TheComputerPlayer.PlayerBetAmount) {
 
-            if(PlayerBet > CPUBet)
-            {
-                PlayerBet = PlayerBet + CPUBet;
-                txtbxPlayerBet.Text = PlayerBet.ToString();
-            }
-            else if (PlayerBet == CPUBet)
-            {
-                PlayerBet = PlayerBet + CPUBet;
-                txtbxPlayerBet.Text = PlayerBet.ToString();
-            }
+                double CurrentPot = Convert.ToDouble(txtbxPot.Text);
+                PlayerBet = HoldemGame.TheHumanPlayer.PlayerBetAmount;
 
+                HoldemGame.TheHumanPlayer.Raise(ref PlayerBet, ref CurrentPot);
+
+                HoldemGame.TheHumanPlayer.PlayerBetAmount = PlayerBet;
+                txtbxPlayerBet.Text = HoldemGame.TheHumanPlayer.PlayerBetAmount.ToString();
+                txtbxPlayerMoney.Text = HoldemGame.TheHumanPlayer.PlayerMoney.ToString();
+                txtbxPot.Text = CurrentPot.ToString();
+            }
         }
 
         private void BtnFold_Click(object sender, RoutedEventArgs e) {
 
+            HoldemGame.TheHumanPlayer.Fold();
 
-        }
-
-        private void txtbxPlayerOddsDraw_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            txtbxPlayerBet.Text = HoldemGame.TheHumanPlayer.PlayerBetAmount.ToString();
+            txtbxPlayerMoney.Text = HoldemGame.TheHumanPlayer.PlayerMoney.ToString();
         }
     }
 }

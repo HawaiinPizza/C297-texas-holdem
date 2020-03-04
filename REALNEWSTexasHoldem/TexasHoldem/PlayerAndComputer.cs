@@ -20,7 +20,7 @@ namespace TexasHoldem {
             }
             else {
 
-                PlayerMoney -= PlayerBetAmount;
+                PlayerMoney -= 10;
                 PlayerBetAmount = 10;
             }
         }
