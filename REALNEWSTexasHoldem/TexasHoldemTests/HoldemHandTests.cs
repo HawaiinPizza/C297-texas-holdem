@@ -15,8 +15,6 @@ namespace TexasHoldem.Tests
 
             HoldemHand holdemHand = new HoldemHand();
             holdemHand.ShuffleDeck();
-
-
         }
     }
 }
