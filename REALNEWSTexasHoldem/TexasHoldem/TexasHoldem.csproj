@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon />
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="TexasHoldemGame.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="computerboi.jpg" />
+    <None Remove="playerboi.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="computerboi.jpg" />
+    <Resource Include="playerboi.jpg" />
+  </ItemGroup>
+
+</Project>
