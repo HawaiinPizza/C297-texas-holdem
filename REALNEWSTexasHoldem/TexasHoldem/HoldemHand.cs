@@ -226,16 +226,10 @@ namespace TexasHoldem {
             CheckForComb[5] = PlayerHand[0];
             CheckForComb[6] = PlayerHand[1];
 
-            //Set the player Hand
-            // Damn it Zaki
-            //HumanPlayerHand.SetHandValue(GetHand(CheckForComb));
             HumanPlayerHand.SetHandValue(GetHand(CheckForComb, true));
+
             CheckForComb[5] = CompHand[0];
             CheckForComb[6] = CompHand[1];
-
-            // Set the CPU hands
-
-             // Damn it Zaki
             ComputerPlayerHand.SetHandValue(GetHand(CheckForComb));
 
             Card[] PossibleCards = GetPossibleCards(Field, PlayerHand);
@@ -258,19 +252,19 @@ namespace TexasHoldem {
             }
 
             //Compare results
-            for (int z = 0; z < 990; z++) {
+            for (int z = 0; z < 990; z++)
+            {
 
                 HumanPlayerHand.CompareTo(PossibleOpposingPokerHands[z]);
-                ComputerPlayerHand.CompareTo(PossibleOpposingPokerHands[z]);
             }
-
 
 
             CalculateOdds();
         }
 
         // Calculate the odds of win/draw/lose
-        public void CalculateOdds() {
+        public void CalculateOdds()
+        {
 
             HumanWinningOdds = Convert.ToDouble((HumanPlayerHand.Wins / 990) * 100);
             HumanLosingOdds = Convert.ToDouble((HumanPlayerHand.Loses / 990) * 100);
