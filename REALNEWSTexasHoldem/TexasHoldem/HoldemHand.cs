@@ -24,6 +24,9 @@ namespace TexasHoldem {
         public List<Card> cards = new List<Card>();
         public int value = -1;
 
+        public PokerHand()
+        {
+        }
         public PokerHand(PokerType Type, List<Card> cards)
         {
             this.Type = Type;
@@ -34,7 +37,11 @@ namespace TexasHoldem {
             this.Type = Type;
             this.cards = cards;
             value = val;
-
+        }
+        public void set(PokerType Type, List<Card> cards, int val) {
+            this.Type = Type;
+            this.cards = cards;
+            value = val;
         }
         public string ToString()
         {
@@ -47,6 +54,157 @@ namespace TexasHoldem {
             }
 
             return temp;
+        }
+
+
+        public static PokerHand GetPoker(Card[] Cards)
+        {
+
+            var SortedCards=Cards.OrderBy(s => s.Value).ThenBy(s => s.Suite);
+            Dictionary<int, List<Card>> temp = new Dictionary<int, List<Card>>();
+            PokerHand[] ReturnHand = new PokerHand[9];
+            int countVal = 1;
+            int countSuit = 1;
+            int iterValue = -1;
+            int iterSuite = -1;
+            PokerHand TEMP = new PokerHand();
+            List<Card> tempCards = new List<Card>();
+            tempCards.Add(Cards[0]);
+            tempCards.Add(Cards[1]);
+            tempCards.Add(Cards[2]);
+            tempCards.Add(Cards[3]);
+            tempCards.Add(Cards[4]);
+
+            int index = 0;
+            TEMP.set(PokerType.HighCard, tempCards, SortedCards.ElementAt(4).Value);
+            ReturnHand[index] = TEMP;
+            index++;
+            foreach(Card i in SortedCards) {
+                //Straight Checking
+                if (iterValue == i.Value) {
+
+                    countVal++;
+                    iterValue++;
+                }
+                else {
+
+                    iterValue = i.Value + 1;
+                    countVal = 1;
+                }
+
+                if (countVal >= 5) {
+                    TEMP.set(PokerType.Straight, tempCards, 49+i.Value);
+                    ReturnHand[index] = TEMP;
+                    index++;
+
+
+                }
+
+                //Straight Flush Checking
+                if (iterSuite == i.Suite) {
+
+                    countSuit++;
+                }
+                else {
+
+                    countSuit = 1;
+                    iterSuite = i.Suite;
+                }
+
+                if (countSuit >= 5) {
+
+                    TEMP.set(PokerType.Straight, tempCards, 61+i.Value);
+                    ReturnHand[index] = TEMP;
+                    index++;
+
+                    if (countVal >= 5) {
+                        TEMP.set(PokerType.StraightFlush, tempCards, 97+i.Value);
+                        ReturnHand[index] = TEMP;
+                        index++;
+
+                    }
+                }
+
+                if (temp.ContainsKey(i.Value))
+                {
+                    temp[i.Value].Add(i);
+                }
+                else
+                {
+                    temp[i.Value] = new List<Card>();
+                    temp[i.Value].Add(i);
+
+                }
+            }
+
+            bool pair=false;
+            bool three=false;
+            foreach (var key in temp) {
+                switch (key.Value.Count())
+                {
+                    case 2:
+                        if (three)
+                        {
+                            TEMP.set(PokerType.FullHouse, tempCards, 73);
+                            ReturnHand[index] = TEMP;
+                            index++;
+                        }
+                        else if (pair)
+                        {
+                            TEMP.set(PokerType.TwoPair, tempCards, 25);
+                            ReturnHand[index] = TEMP;
+                            index++;
+
+                        }
+                        else
+                        {
+                            TEMP.set(PokerType.Pair, tempCards, 13);
+                            ReturnHand[index] = TEMP;
+                            index++;
+                            pair = true;
+
+                        }
+                    break;
+                    case 3:
+                        if (pair)
+                        {
+                            TEMP.set(PokerType.FullHouse, tempCards, 73);
+                            ReturnHand[index] = TEMP;
+                            index++;
+                        }
+                        else
+                        {
+                            TEMP.set(PokerType.ThreeOfAKind, tempCards, 37);
+                            ReturnHand[index] = TEMP;
+                            index++;
+                            three = true;
+
+                        }
+                    break;
+                case 4:
+                        TEMP.set(PokerType.FourOfAKind, tempCards, 85);
+                        ReturnHand[index] = TEMP;
+                        index++;
+                        three = true;
+                        break;
+
+                }
+            }
+
+            for(int i=0; i<index; i++)
+            {
+                if (TEMP < ReturnHand[i])
+                    TEMP = ReturnHand[i];
+            }
+            return TEMP;
+               
+
+
+
+
+
+
+
         }
 
         public void setValue(int Val)
@@ -116,6 +274,11 @@ namespace TexasHoldem {
         public Comb(Card[] Cards)
         {
             PosComb = Cards;
+            SetHand();
+        }
+        public void SetHand()
+        {
+
         }
 
         public void pushPokerHand(PokerHand pokerHand)
@@ -124,6 +287,53 @@ namespace TexasHoldem {
         }
 
 
+        public Comb[] GetCombs(Card[] Cards)
+        {
+            Comb[] TempComb = new Comb[21];
+        int[,] CombinationIndex = new int[,]
+                {
+                {1, 2, 3, 4, 5},
+                {1, 2, 3, 4, 6},
+                {1, 2, 3, 4, 7},
+                {1, 2, 3, 5, 6},
+                {1, 2, 3, 5, 7},
+
+                {1, 2, 3, 6, 7},
+                {1, 2, 4, 5, 6},
+                {1, 2, 4, 5, 7},
+                {1, 2, 4, 6, 7},
+                {1, 2, 5, 6, 7},
+
+                {1, 3, 4, 5, 6},
+                {1, 3, 4, 5, 7},
+                {1, 3, 4, 6, 7},
+                {1, 3, 5, 6, 7},
+                {1, 4, 5, 6, 7},
+
+                {2, 3, 4, 5, 6},
+                {2, 3, 4, 5, 7},
+                {2, 3, 4, 6, 7},
+                {2, 3, 5, 6, 7},
+                {2, 4, 5, 6, 7},
+
+                {3, 4, 5, 6, 7}};
+
+            Card[] Temp = new Card[5];
+
+            for(int i=0; i<21; i++)
+            {
+                for (int j = 0; j < 5; j++) {
+                    Temp[i] = Cards[CombinationIndex[j,i]];
+                }
+                Comb Te = new Comb(Temp);
+                //Te.Se
+                TempComb[i] = Te;
+
+
+            }
+            return TempComb;
+
+        }
 
         public static bool operator==(Comb left, Comb right)
         {
@@ -281,7 +491,7 @@ namespace TexasHoldem {
         public double HumanLosingOdds { get; set; }
         public double HumanDrawingOdds { get; set; }
         public double ComputerWinningOdds { get; set; }
-        
+
         public Card[] Deck = new Card[52];
         public Card[] ComputerHand = new Card[2];
         public Card[] PlayerHand = new Card[2];
@@ -376,13 +586,13 @@ namespace TexasHoldem {
 
 
                 if (
-                    (Deck[i]!=PlayerCards[0]) && 
-                    (Deck[i]!=PlayerCards[1]) &&
-                    (Deck[i]!=Field[0]) &&
-                    (Deck[i]!=Field[1]) &&
-                    (Deck[i]!=Field[2]) &&
-                    (Deck[i]!=Field[3]) &&
-                    (Deck[i]!=Field[4]))
+                    (Deck[i] != PlayerCards[0]) &&
+                    (Deck[i] != PlayerCards[1]) &&
+                    (Deck[i] != Field[0]) &&
+                    (Deck[i] != Field[1]) &&
+                    (Deck[i] != Field[2]) &&
+                    (Deck[i] != Field[3]) &&
+                    (Deck[i] != Field[4]))
                 {
                     PosCards[index] = Deck[i];
                     index++;
@@ -393,10 +603,11 @@ namespace TexasHoldem {
 
 
             return PosCards;
-
-
-            
         }
+
+    
+
+
 
         public void Test()
         {
@@ -453,6 +664,22 @@ namespace TexasHoldem {
             Console.WriteLine(Comb1 < Comb2);
             Console.WriteLine(Comb1 > Comb2);
 
+            PokerHand test1 = new PokerHand();
+
+            test1 = PokerHand.GetPoker(Field);
+            Console.WriteLine(test1.value);
+
+
+
+
+
+            for (int i = 0; i < 44; i++)
+            {
+                for(int j=i; j<44; j++)
+                {
+                    Card[] PosHands = new Card[7];
+                }
+            }
 
             //PokerType Type;
             //List<Card> cards = new List<Card>();
