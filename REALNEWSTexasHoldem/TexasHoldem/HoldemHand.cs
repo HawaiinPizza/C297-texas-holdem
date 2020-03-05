@@ -18,6 +18,37 @@ namespace TexasHoldem {
         StraightFlush,
         FullHouse
     }
+    class PokerHandCon
+    {
+        List<PokerHand> PokerHands = new List<PokerHand>();
+        public PokerHandCon(Card[] cards)
+        {
+
+            this.PokerHands = PokerHand.GetPoker(cards);
+
+        }
+
+        public List<PokerHand> GetPokerHands()
+        {
+            return PokerHands;
+        }
+
+        public string toString()
+        {
+            string temp = "";
+            int i = 0;
+            foreach(PokerHand val in PokerHands)
+            {
+                temp += i + ":\t";
+                temp += val.ToString();
+                temp += "\n";
+                i++;
+
+            }
+            return temp;
+        }
+
+    }
     class PokerHand
     {
         public PokerType Type;
@@ -32,11 +63,15 @@ namespace TexasHoldem {
             this.Type = Type;
             this.cards = cards;
         }
+
+        public PokerHand(Card[] Cards)
+        {
+        }
         public PokerHand(PokerType Type, List<Card> cards, int val)
         {
             this.Type = Type;
             this.cards = cards;
-            value = val;
+            this.value = val;
         }
         public void set(PokerType Type, List<Card> cards, int val) {
             this.Type = Type;
@@ -57,17 +92,16 @@ namespace TexasHoldem {
         }
 
 
-        public static PokerHand GetPoker(Card[] Cards)
+        public static List<PokerHand> GetPoker(Card[] Cards)
         {
 
             var SortedCards=Cards.OrderBy(s => s.Value).ThenBy(s => s.Suite);
             Dictionary<int, List<Card>> temp = new Dictionary<int, List<Card>>();
-            PokerHand[] ReturnHand = new PokerHand[9];
+            List<PokerHand> ReturnHand = new List<PokerHand>();
             int countVal = 1;
             int countSuit = 1;
             int iterValue = -1;
             int iterSuite = -1;
-            PokerHand TEMP = new PokerHand();
             List<Card> tempCards = new List<Card>();
             tempCards.Add(Cards[0]);
             tempCards.Add(Cards[1]);
@@ -76,8 +110,6 @@ namespace TexasHoldem {
             tempCards.Add(Cards[4]);
 
             int index = 0;
-            TEMP.set(PokerType.HighCard, tempCards, SortedCards.ElementAt(4).Value);
-            ReturnHand[index] = TEMP;
             index++;
             foreach(Card i in SortedCards) {
                 //Straight Checking
@@ -93,8 +125,9 @@ namespace TexasHoldem {
                 }
 
                 if (countVal >= 5) {
-                    TEMP.set(PokerType.Straight, tempCards, 49+i.Value);
-                    ReturnHand[index] = TEMP;
+                    PokerHand FUCK = new PokerHand();
+                    FUCK.set(PokerType.Straight, tempCards, 49+i.Value);
+                    ReturnHand.Add( FUCK);
                     index++;
 
 
@@ -113,14 +146,18 @@ namespace TexasHoldem {
 
                 if (countSuit >= 5) {
 
-                    TEMP.set(PokerType.Straight, tempCards, 61+i.Value);
-                    ReturnHand[index] = TEMP;
+                    PokerHand FUCK = new PokerHand();
+                    FUCK.set(PokerType.Flush, tempCards, 61+i.Value);
+                    ReturnHand.Add( FUCK);
                     index++;
 
                     if (countVal >= 5) {
-                        TEMP.set(PokerType.StraightFlush, tempCards, 97+i.Value);
-                        ReturnHand[index] = TEMP;
-                        index++;
+                        {
+                            PokerHand yea = new PokerHand();
+                            yea.set(PokerType.StraightFlush, tempCards, 97 + i.Value);
+                            ReturnHand.Add(yea);
+                            index++;
+                        }
 
                     }
                 }
@@ -145,21 +182,24 @@ namespace TexasHoldem {
                     case 2:
                         if (three)
                         {
-                            TEMP.set(PokerType.FullHouse, tempCards, 73);
-                            ReturnHand[index] = TEMP;
+                            PokerHand wow = new PokerHand();
+                            wow.set(PokerType.FullHouse, tempCards, 73);
+                            ReturnHand.Add( wow);
                             index++;
                         }
                         else if (pair)
                         {
-                            TEMP.set(PokerType.TwoPair, tempCards, 25);
-                            ReturnHand[index] = TEMP;
+                            PokerHand wow1 = new PokerHand();
+                            wow1.set(PokerType.TwoPair, tempCards, 25);
+                            ReturnHand.Add( wow1);
                             index++;
 
                         }
                         else
                         {
-                            TEMP.set(PokerType.Pair, tempCards, 13);
-                            ReturnHand[index] = TEMP;
+                            PokerHand wow2 = new PokerHand();
+                            wow2.set(PokerType.Pair, tempCards, 13);
+                            ReturnHand.Add( wow2);
                             index++;
                             pair = true;
 
@@ -168,22 +208,25 @@ namespace TexasHoldem {
                     case 3:
                         if (pair)
                         {
-                            TEMP.set(PokerType.FullHouse, tempCards, 73);
-                            ReturnHand[index] = TEMP;
+                            PokerHand wow3 = new PokerHand();
+                            wow3.set(PokerType.FullHouse, tempCards, 73);
+                            ReturnHand.Add( wow3);
                             index++;
                         }
                         else
                         {
-                            TEMP.set(PokerType.ThreeOfAKind, tempCards, 37);
-                            ReturnHand[index] = TEMP;
+                            PokerHand wow4 = new PokerHand();
+                            wow4.set(PokerType.ThreeOfAKind, tempCards, 37);
+                            ReturnHand.Add( wow4);
                             index++;
                             three = true;
 
                         }
                     break;
                 case 4:
-                        TEMP.set(PokerType.FourOfAKind, tempCards, 85);
-                        ReturnHand[index] = TEMP;
+                        PokerHand wow5 = new PokerHand();
+                        wow5.set(PokerType.FourOfAKind, tempCards, 85);
+                        ReturnHand.Add( wow5);
                         index++;
                         three = true;
                         break;
@@ -191,12 +234,12 @@ namespace TexasHoldem {
                 }
             }
 
-            for(int i=0; i<index; i++)
             {
-                if (TEMP < ReturnHand[i])
-                    TEMP = ReturnHand[i];
+                PokerHand FUCK = new PokerHand();
+                FUCK.set(PokerType.HighCard, tempCards, SortedCards.ElementAt(4).Value);
+                ReturnHand.Add(FUCK);
             }
-            return TEMP;
+            return ReturnHand;
                
 
 
@@ -278,6 +321,7 @@ namespace TexasHoldem {
         }
         public void SetHand()
         {
+            this.PokerHands = PokerHand.GetPoker(PosComb);
 
         }
 
@@ -326,7 +370,6 @@ namespace TexasHoldem {
                     Temp[i] = Cards[CombinationIndex[j,i]];
                 }
                 Comb Te = new Comb(Temp);
-                //Te.Se
                 TempComb[i] = Te;
 
 
@@ -486,7 +529,6 @@ namespace TexasHoldem {
         HumanPlayer TheHumanPlayer = new HumanPlayer(100.0, 10.0);
         ComputerPlayer TheComputerPlayer = new ComputerPlayer(100.0, 10.0);
 
-
         public double HumanWinningOdds { get; set; }
         public double HumanLosingOdds { get; set; }
         public double HumanDrawingOdds { get; set; }
@@ -577,7 +619,7 @@ namespace TexasHoldem {
             ////Console.WriteLine(Point);
         }
 
-        public Card[] GetPossipleCards(Card[] Field, Card[] PlayerCards)
+        private Card[,] GetPossipleCards(Card[] Field, Card[] PlayerCards)
         {
             Card[] PosCards = new Card[45];
             int index = 0;
@@ -602,7 +644,38 @@ namespace TexasHoldem {
 
 
 
-            return PosCards;
+            Card[,] PosHandsAll = new Card[990,7];
+
+            index = 0;
+            for (int i = 0; i < 44; i++)
+            {
+                for (int j = i; j < 44; j++)
+                {
+                    Card[] PosHands = new Card[7];
+                    Card[] tempHand = new Card[5];
+                    Comb[] TempComb = new Comb[21];
+                    PosHands[0] = Field[0];
+                    PosHands[1] = Field[1];
+                    PosHands[2] = Field[2];
+                    PosHands[3] = Field[3];
+                    PosHands[4] = Field[4];
+                    PosHands[5] = PosCards[i];
+                    PosHands[6] = PosCards[j];
+
+                    PosHandsAll[index,0] = PosHands[0];
+                    PosHandsAll[index,1] = PosHands[1];
+                    PosHandsAll[index,2] = PosHands[2];
+                    PosHandsAll[index,3] = PosHands[3];
+                    PosHandsAll[index,4] = PosHands[4];
+                    PosHandsAll[index,5] = PosHands[5];
+                    PosHandsAll[index,6] = PosHands[6];
+                    index++;
+
+                }
+            }
+
+            return PosHandsAll;
+
         }
 
     
@@ -613,21 +686,58 @@ namespace TexasHoldem {
         {
             Card[] Temp = new Card[45];
             Card[] Field = new Card[5];
-            Field[0].Set(0, 0);
-            Field[1].Set(1, 0);
-            Field[2].Set(2, 0);
-            Field[3].Set(3, 0);
-            Field[4].Set(4, 0);
-            Card[] Player = new Card[2];
-            Player[0].Set(0, 1);
-            Player[1].Set(0, 2);
-            GetPossipleCards(Field, Player);
-            Temp = GetPossipleCards(Field, Player);
-            foreach (Card temp in Temp)
-            {
-                Console.WriteLine("Vlaue is {0} and suite is {1}", temp.Value, temp.Suite);
-            }
+            Field[0].Set(12, 0);
+            Field[1].Set(5, 1);
+            Field[2].Set(7, 2);
+            Field[3].Set(0, 3);
+            Field[4].Set(6, 3);
 
+            Card[] Player = new Card[2];
+            Player[0].Set(4, 0);
+            Player[1].Set(0, 0);
+
+            var what=GetPossipleCards(Field, Player);
+            int size = 0;
+            Card[] Intro = new Card[7];
+            Intro[0] = Field[0];
+            Intro[1] = Field[1];
+            Intro[2] = Field[2];
+            Intro[3] = Field[3];
+            Intro[4] = Field[4];
+            Intro[5] = Player[0];
+            Intro[6] = Player[1];
+            Comb PlayerComb = new Comb(Intro);
+            int wins = 0;
+            int draws = 0;
+            int loses = 0;
+            for(int i=0; i<990; i++)
+            {
+
+                Card[] cards = new Card[7];
+                cards[0]= what[i, 0];
+                cards[1]= what[i, 1];
+                cards[2]= what[i, 2];
+                cards[3]= what[i, 3];
+                cards[4]= what[i, 4];
+                cards[5]= what[i, 5];
+                cards[6]= what[i, 6];
+
+                Comb tempCom = new Comb(cards);
+                foreach(var tempTemp in tempCom.PokerHands)
+                {
+                    if (tempTemp.Type == PokerType.StraightFlush)
+                        Console.WriteLine("RAIN DRAPO\t"+tempTemp.value);
+                }
+                if (tempCom < PlayerComb)
+                    wins++;
+                else if (tempCom > PlayerComb)
+                    loses++;
+                else if (tempCom == PlayerComb)
+                    draws++;
+            }
+            Console.WriteLine("Wins "+wins + "\tLoses " + loses + "\tDraws " + draws + "\t Total size"+(wins+loses+draws));
+
+            /*
             List<Card> A1 = new List<Card>();
             List<Card> A2 = new List<Card>();
             A1.Add(Field[0]);
@@ -664,22 +774,12 @@ namespace TexasHoldem {
             Console.WriteLine(Comb1 < Comb2);
             Console.WriteLine(Comb1 > Comb2);
 
-            PokerHand test1 = new PokerHand();
-
-            test1 = PokerHand.GetPoker(Field);
-            Console.WriteLine(test1.value);
-
-
+            PokerHandCon test1 = new PokerHandCon(Field);
+            Console.WriteLine("JOJO");
+            Console.WriteLine(test1.toString());
+            */
 
 
-
-            for (int i = 0; i < 44; i++)
-            {
-                for(int j=i; j<44; j++)
-                {
-                    Card[] PosHands = new Card[7];
-                }
-            }
 
             //PokerType Type;
             //List<Card> cards = new List<Card>();
