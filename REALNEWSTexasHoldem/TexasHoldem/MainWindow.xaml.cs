@@ -31,8 +31,6 @@ namespace TexasHoldem {
             InitializeComponent();
             HoldemGame.ShuffleDeck();
             HoldemGame.TheHumanPlayer.IsMyTurn = true;
-
-            ShowHumanPlayerCards();
         }
 
         private void ShowHumanPlayerCards() {
@@ -49,11 +47,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\2S.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\2S.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -62,11 +74,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\2C.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\2C.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -75,11 +101,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\2H.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\2H.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -88,11 +128,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\2D.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\2D.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -109,11 +163,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\3S.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\3S.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -122,11 +190,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\3C.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\3C.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -135,11 +217,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\3H.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\3H.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -148,11 +244,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\3D.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\3D.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -169,11 +279,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\4S.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\4S.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -182,11 +306,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\4C.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\4C.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -195,11 +333,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\4H.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\4H.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -208,11 +360,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\4D.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\4D.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -229,11 +395,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\5S.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\5S.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -242,11 +422,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\5C.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\5C.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -255,11 +449,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\5H.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\5H.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -268,11 +476,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\5D.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\5D.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -289,11 +511,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\6S.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\6S.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -302,11 +538,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\6C.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\6C.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -315,11 +565,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\6H.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\6H.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -328,11 +592,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\6D.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\6D.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -349,11 +627,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\7S.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\7S.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -362,11 +654,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\7C.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\7C.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -375,11 +681,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\7H.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\7H.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -388,11 +708,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\7D.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\7D.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -409,11 +743,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\8S.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\8S.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -422,11 +770,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\8C.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\8C.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -435,11 +797,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\8H.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\8H.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -448,11 +824,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\8D.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\8D.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -469,11 +859,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\9S.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\9S.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -482,11 +886,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\9C.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\9C.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -495,11 +913,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\9H.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\9H.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -508,11 +940,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\9D.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\9D.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -529,11 +975,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\10S.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\10S.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -542,11 +1002,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\10C.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\10C.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -555,11 +1029,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\10H.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\10H.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -568,11 +1056,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\10D.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\10D.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -589,11 +1091,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\JS.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\JS.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -602,11 +1118,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\JC.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\JC.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -615,11 +1145,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\JH.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\JH.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -628,11 +1172,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\JD.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\JD.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -649,11 +1207,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\QS.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\QS.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -662,11 +1234,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\QC.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\QC.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -675,11 +1261,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\QH.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\QH.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -688,11 +1288,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\QD.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\QD.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -709,11 +1323,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\KS.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\KS.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -722,11 +1350,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\KC.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\KC.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -735,11 +1377,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\KH.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\KH.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -748,11 +1404,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\KD.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\KD.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -769,11 +1439,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\AS.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\AS.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2S.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -782,11 +1466,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\AC.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\AC.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2C.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -795,11 +1493,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\AH.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\AH.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2H.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
@@ -808,11 +1520,25 @@ namespace TexasHoldem {
                                 switch (x) {
 
                                     case 0:
-                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\AD.png", UriKind.Relative));
+
+                                        BitmapImage CardFirstFace = new BitmapImage();
+                                        CardFirstFace.BeginInit();
+                                        CardFirstFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardFirstFace.EndInit();
+
+                                        imgPlayerFirstCard.Stretch = Stretch.Fill;
+                                        imgPlayerFirstCard.Source = CardFirstFace;
                                         break;
 
                                     case 1:
-                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\AD.png", UriKind.Relative));
+
+                                        BitmapImage CardSecondFace = new BitmapImage();
+                                        CardSecondFace.BeginInit();
+                                        CardSecondFace.UriSource = new Uri(@"\cs\2D.png", UriKind.Relative);
+                                        CardSecondFace.EndInit();
+
+                                        imgPlayerSecondCard.Stretch = Stretch.Fill;
+                                        imgPlayerSecondCard.Source = CardSecondFace;
                                         break;
                                 }
                                 break;
