@@ -3586,11 +3586,25 @@ namespace TexasHoldem {
                 else {
 
                     HoldemGame.TheComputerPlayer.Fold();
+
+                    HoldemGame.TheHumanPlayer.PlayerMoney += Convert.ToDouble(txtbxPot.Text) - 10;
+                    HoldemGame.TheHumanPlayer.PlayerBetAmount = 10.0;
+
+                    txtbxPot.Text = Convert.ToString(HoldemGame.TheComputerPlayer.PlayerBetAmount + HoldemGame.TheHumanPlayer.PlayerBetAmount);
+
+                    HoldemGame.ShuffleDeck();
                 }
             }
             else {
 
                 HoldemGame.TheComputerPlayer.Fold();
+
+                HoldemGame.TheHumanPlayer.PlayerMoney += Convert.ToDouble(txtbxPot.Text) - 10;
+                HoldemGame.TheHumanPlayer.PlayerBetAmount = 10.0;
+
+                txtbxPot.Text = Convert.ToString(HoldemGame.TheComputerPlayer.PlayerBetAmount + HoldemGame.TheHumanPlayer.PlayerBetAmount);
+
+                HoldemGame.ShuffleDeck();
             }
 
             txtbxComputerBet.Text = HoldemGame.TheComputerPlayer.PlayerBetAmount.ToString();
