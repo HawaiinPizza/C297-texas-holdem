@@ -18,51 +18,15 @@
         <TextBox x:Name="txtbxComputerMoney" HorizontalAlignment="Left" Margin="883,46,0,0" Text="100.0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" FontSize="14" Background="#FFAEF0A3" BorderBrush="Black" IsReadOnly="True" SelectionBrush="Black"/>
         <TextBox x:Name="txtbxComputerBet" HorizontalAlignment="Left" Margin="883,72,0,0" Text="10.0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" FontSize="14" Background="#FFAEF0A3" BorderBrush="Black" IsReadOnly="True" SelectionBrush="Black" UndoLimit="10"/>
 
-        <Border BorderThickness="1" BorderBrush="Black" Margin="536,14,317,451">
-            <Image x:Name="imgComputerFirstCard" HorizontalAlignment="Left" Height="197" Margin="0,0,0,0" VerticalAlignment="Top" Width="124" Stretch="Fill"/>
-        </Border>
-
-        <Border BorderThickness="1" BorderBrush="Black" Margin="672,14,182,451">
-            <Image x:Name="imgComputerSecondCard" HorizontalAlignment="Left" Height="197" Margin="0,0,0,0" VerticalAlignment="Top" Width="124" Stretch="Fill"/>
-        </Border>
-
         <TextBox x:Name="txtbxPlayerOddsOfWinning" HorizontalAlignment="Left" Margin="144,452,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" FontSize="14" Background="#FFAEF0A3" BorderBrush="Black" IsReadOnly="True" SelectionBrush="Black"/>
         <TextBox x:Name="txtbxPlayerOddsOfLosing" HorizontalAlignment="Left" Margin="144,481,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" FontSize="14" Background="#FFAEF0A3" BorderBrush="Black" IsReadOnly="True" SelectionBrush="Black"/>
         <TextBox x:Name="txtbxPlayerOddsDraw" HorizontalAlignment="Left" Margin="144,510,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" FontSize="14" Background="#FFAEF0A3" BorderBrush="Black" IsReadOnly="True" SelectionBrush="Black"/>
         <TextBox x:Name="txtbxPlayerBet" HorizontalAlignment="Left" Margin="144,587,0,0" Text="10.0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" FontSize="14" Background="#FFAEF0A3" BorderBrush="Black" IsReadOnly="True" SelectionBrush="Black" UndoLimit="10"/>
         <TextBox x:Name="txtbxPlayerMoney" HorizontalAlignment="Left" Margin="144,558,0,0" Text="100.0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" FontSize="14" Background="#FFAEF0A3" BorderBrush="Black" IsReadOnly="True" SelectionBrush="Black"/>
 
-        <Border BorderThickness="1" BorderBrush="Black" Margin="230,433,624,32">
-            <Image x:Name="imgPlayerFirstCard" HorizontalAlignment="Left" Height="197" Margin="0,0,0,0" VerticalAlignment="Top" Width="124" Stretch="Fill"/>
-        </Border>
-
-        <Border BorderThickness="1" BorderBrush="Black" Margin="366,433,487,32">
-            <Image x:Name="imgPlayerSecondCard" HorizontalAlignment="Left" Height="197" Margin="0,0,0,0" VerticalAlignment="Top" Width="124" Stretch="Fill"/>
-        </Border>
-
         <Rectangle HorizontalAlignment="Left" Height="189" Margin="16,433,0,0" Stroke="Black" VerticalAlignment="Top" Width="199" Fill="#FF4C8551" Panel.ZIndex="-1"/>
         <Rectangle HorizontalAlignment="Left" Height="65" Margin="812,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="142" Fill="#FF4C8551" Panel.ZIndex="-1"/>
         <Rectangle HorizontalAlignment="Left" Height="50" Margin="508,437,0,0" Stroke="Black" VerticalAlignment="Top" Width="136" Fill="#FF4C8551" Panel.ZIndex="-1"/>
-
-        <Border BorderThickness="1" BorderBrush="Black" Margin="148,223,705,241">
-            <Image x:Name="imgBoardFirstCard" HorizontalAlignment="Left" Height="197" Margin="0,0,0,0" VerticalAlignment="Top" Width="124" Stretch="Fill"/>
-        </Border>
-
-        <Border BorderThickness="1" BorderBrush="Black" Margin="298,223,555,241">
-            <Image x:Name="imgBoardSecondCard" HorizontalAlignment="Left" Height="197" Margin="0,0,0,0" VerticalAlignment="Top" Width="124" Stretch="Fill"/>
-        </Border>
-
-        <Border BorderThickness="1" BorderBrush="Black" Margin="448,223,405,241">
-            <Image x:Name="imgBoardThirdCard" HorizontalAlignment="Left" Height="197" Margin="0,0,0,0" VerticalAlignment="Top" Width="124" Stretch="Fill"/>
-        </Border>
-
-        <Border BorderThickness="1" BorderBrush="Black" Margin="598,223,255,241">
-            <Image x:Name="imgBoardFourthCard" HorizontalAlignment="Left" Height="197" Margin="0,0,0,0" VerticalAlignment="Top" Width="124" Stretch="Fill"/>
-        </Border>
-
-        <Border BorderThickness="1" BorderBrush="Black" Margin="748,223,105,241">
-            <Image x:Name="imgBoardFifthCard" HorizontalAlignment="Left" Height="197" Margin="0,0,0,0" VerticalAlignment="Top" Width="124" Stretch="Fill"/>
-        </Border>
 
         <Button x:Name="BtnRaise" Content="Raise" HorizontalAlignment="Left" Margin="508,500,0,0" VerticalAlignment="Top" FontSize="16" Width="64" Background="#FFAEF0A3" BorderBrush="Black" Click="BtnRaise_Click"/>
         <Button x:Name="BtnFold" Content="Fold" HorizontalAlignment="Left" Margin="508,542,0,0" VerticalAlignment="Top" FontSize="16" Width="64" Background="#FFAEF0A3" BorderBrush="Black" Click="BtnFold_Click"/>
@@ -76,6 +40,18 @@
 
         <Label Content="Computer" HorizontalAlignment="Left" Margin="389,148,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label Content="Player" HorizontalAlignment="Left" Margin="739,608,0,0" VerticalAlignment="Top" FontSize="16"/>
-        
+
+        <Label x:Name="FirstPlayerCard"  Content="" HorizontalAlignment="Left" Margin="233,444,0,0" VerticalAlignment="Top" FontSize="36" Height="166" Width="129"/>
+        <Label x:Name="SecondPlayerCard"  Content="" HorizontalAlignment="Left" Margin="373,444,0,0" VerticalAlignment="Top" FontSize="36" Height="166" Width="129"/>
+
+        <Label x:Name="FirstComputerCard"  Content="" HorizontalAlignment="Left" Margin="527,17,0,0" VerticalAlignment="Top" FontSize="36" Height="166" Width="129"/>
+        <Label x:Name="SecondComputerCard"  Content="" HorizontalAlignment="Left" Margin="667,17,0,0" VerticalAlignment="Top" FontSize="36" Height="166" Width="129"/>
+
+        <Label x:Name="FirstFieldCard"  Content="" HorizontalAlignment="Left" Margin="134,213,0,0" VerticalAlignment="Top" FontSize="36" Height="166" Width="129"/>
+        <Label x:Name="SecondFieldCard"  Content="" HorizontalAlignment="Left" Margin="274,213,0,0" VerticalAlignment="Top" FontSize="36" Height="166" Width="129"/>
+        <Label x:Name="ThirdFieldCard"  Content="" HorizontalAlignment="Left" Margin="414,213,0,0" VerticalAlignment="Top" FontSize="36" Height="166" Width="129"/>
+        <Label x:Name="FourthFieldCard"  Content="" HorizontalAlignment="Left" Margin="554,213,0,0" VerticalAlignment="Top" FontSize="36" Height="166" Width="129"/>
+        <Label x:Name="FifthFieldCard"  Content="" HorizontalAlignment="Left" Margin="694,213,0,0" VerticalAlignment="Top" FontSize="36" Height="166" Width="129"/>
+
     </Grid>
 </Window>
