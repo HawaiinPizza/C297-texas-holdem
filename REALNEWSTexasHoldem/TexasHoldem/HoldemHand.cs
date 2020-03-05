@@ -78,10 +78,10 @@ namespace TexasHoldem {
             this.cards = cards;
             value = val;
         }
-        public string ToString()
+        public override string ToString()
         {
 
-            String temp = ("Type " + Type + ":      \t Value:" + value);
+            string temp = ("Type " + Type + ":      \t Value:" + value);
             foreach(Card i in cards)
             {
                 temp += "\n";
