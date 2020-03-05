@@ -10,17 +10,15 @@ namespace TexasHoldem.Tests
     public class HoldemHandTests
     {
         [TestMethod()]
-        public void GetHandTest()
+        public void CombinationComparisonTest()
         {
-
-            HoldemHand holdemHand = new HoldemHand();
-            holdemHand.ShuffleDeck();
-
+            // Arrange
             Card[] cards = new Card[5];
             Card[] cards1 = new Card[5];
 
-            cards[0].Set(6, 1);
-            cards[1].Set(6, 3);
+            // Act
+            cards[0].Set(2, 3);
+            cards[1].Set(1, 0);
             cards[2].Set(7, 2);
             cards[3].Set(6, 2);
             cards[4].Set(6, 0);
@@ -31,6 +29,11 @@ namespace TexasHoldem.Tests
             cards1[3].Set(6, 2);
             cards1[4].Set(6, 0);
 
+            Comb combinationOne = new Comb(cards);
+            Comb combinationTwo = new Comb(cards1);
+
+            // Assert
+            Assert.IsTrue(combinationOne == combinationTwo);
         }
     }
 }

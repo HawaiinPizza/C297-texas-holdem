@@ -6,7 +6,7 @@ using System.Linq;
 
 
 namespace TexasHoldem {
-    enum PokerType
+    public enum PokerType
     {
         HighCard,
         Pair,
@@ -18,7 +18,7 @@ namespace TexasHoldem {
         StraightFlush,
         FullHouse
     }
-    class PokerHandCon
+    public class PokerHandCon
     {
         List<PokerHand> PokerHands = new List<PokerHand>();
         public PokerHandCon(Card[] cards)
@@ -305,10 +305,24 @@ namespace TexasHoldem {
             }
         }
 
+        public override bool Equals(object obj) {
+            if (ReferenceEquals(this, obj)) {
+                return true;
+            }
+
+            if (ReferenceEquals(obj, null)) {
+                return false;
+            }
+
+            throw new NotImplementedException();
+        }
+
+        public override int GetHashCode() {
+            throw new NotImplementedException();
+        }
     }
 
-    public class Comb
-    {
+    public class Comb {
         public List<PokerHand> PokerHands = new List<PokerHand>();
         public Card[] PosComb = new Card[5];
 
@@ -518,6 +532,21 @@ namespace TexasHoldem {
             }
         }
 
+        public override bool Equals(object obj) {
+            if (ReferenceEquals(this, obj)) {
+                return true;
+            }
+
+            if (ReferenceEquals(obj, null)) {
+                return false;
+            }
+
+            throw new NotImplementedException();
+        }
+
+        public override int GetHashCode() {
+            throw new NotImplementedException();
+        }
     }
 
 
