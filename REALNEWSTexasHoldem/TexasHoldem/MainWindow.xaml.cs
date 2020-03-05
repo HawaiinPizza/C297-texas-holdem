@@ -3590,6 +3590,8 @@ namespace TexasHoldem {
                     HoldemGame.TheHumanPlayer.PlayerMoney += Convert.ToDouble(txtbxPot.Text) - 10;
                     HoldemGame.TheHumanPlayer.PlayerBetAmount = 10.0;
 
+                    txtbxPlayerMoney.Text = HoldemGame.TheHumanPlayer.PlayerMoney.ToString();
+                    txtbxPlayerBet.Text = HoldemGame.TheHumanPlayer.PlayerBetAmount.ToString();
                     txtbxPot.Text = Convert.ToString(HoldemGame.TheComputerPlayer.PlayerBetAmount + HoldemGame.TheHumanPlayer.PlayerBetAmount);
 
                     HoldemGame.ShuffleDeck();
@@ -3602,6 +3604,8 @@ namespace TexasHoldem {
                 HoldemGame.TheHumanPlayer.PlayerMoney += Convert.ToDouble(txtbxPot.Text) - 10;
                 HoldemGame.TheHumanPlayer.PlayerBetAmount = 10.0;
 
+                txtbxPlayerMoney.Text = HoldemGame.TheHumanPlayer.PlayerMoney.ToString();
+                txtbxPlayerBet.Text = HoldemGame.TheHumanPlayer.PlayerBetAmount.ToString();
                 txtbxPot.Text = Convert.ToString(HoldemGame.TheComputerPlayer.PlayerBetAmount + HoldemGame.TheHumanPlayer.PlayerBetAmount);
 
                 HoldemGame.ShuffleDeck();
@@ -3625,6 +3629,8 @@ namespace TexasHoldem {
         private void ShowComputerCardsAndCompare() {
 
             ShowComputerPlayerCards();
+
+
         }
     }
 }
