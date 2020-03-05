@@ -85,7 +85,7 @@ namespace TexasHoldem {
 
         private void ComputerTurnIfPlayerRaises() {
 
-            if (HoldemGame.TheComputerPlayer.PlayerMoney + HoldemGame.TheComputerPlayer.PlayerBetAmount !< HoldemGame.TheHumanPlayer.PlayerBetAmount) {
+            if ((HoldemGame.TheComputerPlayer.PlayerMoney + HoldemGame.TheComputerPlayer.PlayerBetAmount) !< HoldemGame.TheHumanPlayer.PlayerBetAmount) {
                 
                 if (HoldemGame.ComputerWinningOdds >= 50.0) {
 
