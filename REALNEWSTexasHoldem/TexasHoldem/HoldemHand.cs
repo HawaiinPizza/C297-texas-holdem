@@ -524,8 +524,8 @@ namespace TexasHoldem {
     public class HoldemHand {
 
         ////////////////////////////////// Variables ////////////////////////////////////////////
-        HumanPlayer TheHumanPlayer = new HumanPlayer(100.0, 10.0);
-        ComputerPlayer TheComputerPlayer = new ComputerPlayer(100.0, 10.0);
+        public HumanPlayer TheHumanPlayer = new HumanPlayer(100.0, 10.0);
+        public ComputerPlayer TheComputerPlayer = new ComputerPlayer(100.0, 10.0);
 
         public double HumanWinningOdds { get; set; }
         public double HumanLosingOdds { get; set; }
