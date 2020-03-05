@@ -3540,6 +3540,8 @@ namespace TexasHoldem {
 
                 HoldemGame.TheHumanPlayer.IsMyTurn = false;
                 HoldemGame.TheComputerPlayer.IsMyTurn = true;
+
+                ComputerTurnIfPlayerFolds();
             }    
         }
 
@@ -3554,11 +3556,17 @@ namespace TexasHoldem {
         private void ComputerTurnIfPlayerFolds() {
 
             HoldemGame.TheComputerPlayer.PlayerMoney += Convert.ToDouble(txtbxPot.Text) - 10;
-            HoldemGame.TheComputerPlayer.PlayerBetAmount = 10;
+            HoldemGame.TheComputerPlayer.PlayerBetAmount = 10.0;
 
+            txtbxPot.Text = Convert.ToString(HoldemGame.TheComputerPlayer.PlayerBetAmount + HoldemGame.TheHumanPlayer.PlayerBetAmount);
+
+            HoldemGame.ShuffleDeck();
 
             HoldemGame.TheHumanPlayer.IsMyTurn = true;
             HoldemGame.TheComputerPlayer.IsMyTurn = false;
+
+            ShowHumanPlayerCards();
+            ShowFieldCards();
         }
 
         private void ComputerTurnIfPlayerRaises() {
@@ -3572,6 +3580,8 @@ namespace TexasHoldem {
                     HoldemGame.TheComputerPlayer.Call(HoldemGame.TheHumanPlayer.PlayerBetAmount, ref CurrentPot);
 
                     txtbxPot.Text = CurrentPot.ToString();
+
+                    ShowComputerCardsAndCompare();
                 }
                 else {
 
@@ -3585,8 +3595,6 @@ namespace TexasHoldem {
 
             txtbxComputerBet.Text = HoldemGame.TheComputerPlayer.PlayerBetAmount.ToString();
             txtbxComputerMoney.Text = HoldemGame.TheComputerPlayer.PlayerMoney.ToString();
-
-            ShowComputerCardsAndCompare();
 
             HoldemGame.TheHumanPlayer.IsMyTurn = true;
             HoldemGame.TheComputerPlayer.IsMyTurn = false;
