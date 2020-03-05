@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="PokerHand.cs" />
     <Compile Remove="TexasHoldemGame.cs" />
   </ItemGroup>
 

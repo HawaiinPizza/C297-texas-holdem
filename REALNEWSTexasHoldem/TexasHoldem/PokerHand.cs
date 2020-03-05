@@ -7,9 +7,6 @@ namespace TexasHoldem {
 
     public class PokerHand : IComparable<PokerHand> {
 
-        public HandValue[] PlayerHandValues;
-
-        PossibleHands PosHands;
 
 
 
@@ -27,10 +24,6 @@ namespace TexasHoldem {
 
         }
 
-        public void SetHandValue(HandValue[] BestPokerHandValue) {
-
-            PlayerHandValues = BestPokerHandValue;
-        }
 
         public int CompareTo(PokerHand other) {
 
@@ -55,11 +48,7 @@ namespace TexasHoldem {
 
             for (int i = 0; i < 21; i++)
             {
-                if ((left.PlayerHandValues[i].WhichHand != right.PlayerHandValues[i].WhichHand) || (left.PlayerHandValues[i].Value != right.PlayerHandValues[i].Value))
-                {
-                    //Console.WriteLine("We are not equal" + "\t" + i);
-                    return false;
-                }
+                return false;
             }
 
             //Console.WriteLine("Fuck it they are equal");

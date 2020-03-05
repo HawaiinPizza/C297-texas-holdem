@@ -8,6 +8,12 @@ namespace TexasHoldem {
 
         public int Value;
         public int Suite;
+
+        public Card(int Val, int Suit)
+        {
+            Value = Val;
+            Suite = Suit;
+        }
         public string toString()
         {
 
