@@ -18,11 +18,11 @@
         <TextBox x:Name="txtbxComputerMoney" HorizontalAlignment="Left" Margin="883,46,0,0" Text="100.0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" FontSize="14" Background="#FFAEF0A3" BorderBrush="Black" IsReadOnly="True" SelectionBrush="Black"/>
         <TextBox x:Name="txtbxComputerBet" HorizontalAlignment="Left" Margin="883,72,0,0" Text="10.0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" FontSize="14" Background="#FFAEF0A3" BorderBrush="Black" IsReadOnly="True" SelectionBrush="Black" UndoLimit="10"/>
 
-        <Border BorderThickness="1" BorderBrush="Black" Margin="536,14,317,450">
+        <Border BorderThickness="1" BorderBrush="Black" Margin="536,14,317,451">
             <Image x:Name="imgComputerFirstCard" HorizontalAlignment="Left" Height="197" Margin="0,0,0,0" VerticalAlignment="Top" Width="124"/>
         </Border>
 
-        <Border BorderThickness="1" BorderBrush="Black" Margin="672,14,182,450">
+        <Border BorderThickness="1" BorderBrush="Black" Margin="672,14,182,451">
             <Image x:Name="imgComputerSecondCard" HorizontalAlignment="Left" Height="197" Margin="0,0,0,0" VerticalAlignment="Top" Width="124"/>
         </Border>
 
@@ -32,11 +32,11 @@
         <TextBox x:Name="txtbxPlayerBet" HorizontalAlignment="Left" Margin="144,587,0,0" Text="10.0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" FontSize="14" Background="#FFAEF0A3" BorderBrush="Black" IsReadOnly="True" SelectionBrush="Black" UndoLimit="10"/>
         <TextBox x:Name="txtbxPlayerMoney" HorizontalAlignment="Left" Margin="144,558,0,0" Text="100.0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" FontSize="14" Background="#FFAEF0A3" BorderBrush="Black" IsReadOnly="True" SelectionBrush="Black"/>
 
-        <Border BorderThickness="1" BorderBrush="Black" Margin="230,433,624,22">
+        <Border BorderThickness="1" BorderBrush="Black" Margin="230,433,624,32">
             <Image x:Name="imgPlayerFirstCard" HorizontalAlignment="Left" Height="197" Margin="0,0,0,0" VerticalAlignment="Top" Width="124"/>
         </Border>
 
-        <Border BorderThickness="1" BorderBrush="Black" Margin="366,433,487,22">
+        <Border BorderThickness="1" BorderBrush="Black" Margin="366,433,487,32">
             <Image x:Name="imgPlayerSecondCard" HorizontalAlignment="Left" Height="197" Margin="0,0,0,0" VerticalAlignment="Top" Width="124"/>
         </Border>
 

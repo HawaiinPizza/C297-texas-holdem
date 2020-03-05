@@ -33,6 +33,11 @@ namespace TexasHoldem {
             HoldemGame.TheHumanPlayer.IsMyTurn = true;
         }
 
+        private void ShowFieldAndHumanPlayerCards() {
+
+
+        }
+
         private void BtnRaise_Click(object sender, RoutedEventArgs e){
 
             if (HoldemGame.TheHumanPlayer.IsMyTurn && HoldemGame.TheHumanPlayer.PlayerBetAmount == HoldemGame.TheComputerPlayer.PlayerBetAmount) {
@@ -70,14 +75,15 @@ namespace TexasHoldem {
 
         private void BtnNeither_Click(object sender, RoutedEventArgs e) {
 
+            HoldemGame.TheHumanPlayer.IsMyTurn = false;
+            HoldemGame.TheComputerPlayer.IsMyTurn = true;
 
+            ComputerTurnIfPlayerNeitherFoldsNorRaises();
         }
 
         private void ComputerTurnIfPlayerFolds() {
 
 
-
-            ShowAndCompareCards();
 
             HoldemGame.TheHumanPlayer.IsMyTurn = true;
             HoldemGame.TheComputerPlayer.IsMyTurn = false;
@@ -108,13 +114,21 @@ namespace TexasHoldem {
             txtbxComputerBet.Text = HoldemGame.TheComputerPlayer.PlayerBetAmount.ToString();
             txtbxComputerMoney.Text = HoldemGame.TheComputerPlayer.PlayerMoney.ToString();
 
-            ShowAndCompareCards();
+            ShowComputerCardsAndCompare();
 
             HoldemGame.TheHumanPlayer.IsMyTurn = true;
             HoldemGame.TheComputerPlayer.IsMyTurn = false;
         }
 
-        private void ShowAndCompareCards() {
+        private void ComputerTurnIfPlayerNeitherFoldsNorRaises() {
+
+            ShowComputerCardsAndCompare();
+
+            HoldemGame.TheHumanPlayer.IsMyTurn = true;
+            HoldemGame.TheComputerPlayer.IsMyTurn = false;
+        }
+
+        private void ShowComputerCardsAndCompare() {
 
 
         }
