@@ -528,8 +528,6 @@ namespace TexasHoldem {
 
         }
 
-
-
         public void Test()
         {
             //public static Card[] GetPossibleCards(Card[] Field, Card[] PlayerHand) {
@@ -552,6 +550,7 @@ namespace TexasHoldem {
             FindWinsDrawsAndLosses(Field, PlayerHand, ComputerHand);
 
         }
+
         // Get the Best hand out of all given scores
         public static HandValue GetBestHand(PossibleHands HandScores) {
 
