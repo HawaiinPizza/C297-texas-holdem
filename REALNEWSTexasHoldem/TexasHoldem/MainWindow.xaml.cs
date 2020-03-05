@@ -73,9 +73,9 @@ namespace TexasHoldem {
 
         private void ComputerTurnIfPlayerRaises() {
 
-            if (HoldemGame.ComputerWinningOdds >= 50.0) {  
-
-                if (HoldemGame.TheComputerPlayer.PlayerMoney + HoldemGame.TheComputerPlayer.PlayerBetAmount !< HoldemGame.TheHumanPlayer.PlayerBetAmount) {
+            if (HoldemGame.TheComputerPlayer.PlayerMoney + HoldemGame.TheComputerPlayer.PlayerBetAmount !< HoldemGame.TheHumanPlayer.PlayerBetAmount) {
+                
+                if (HoldemGame.ComputerWinningOdds >= 50.0) {
 
                     double CurrentPot = Convert.ToDouble(txtbxPot.Text);
 
@@ -87,10 +87,17 @@ namespace TexasHoldem {
 
                     HoldemGame.TheComputerPlayer.Fold();
                 }
-
-                txtbxComputerBet.Text = HoldemGame.TheComputerPlayer.PlayerBetAmount.ToString();
-                txtbxComputerMoney.Text = HoldemGame.TheComputerPlayer.PlayerMoney.ToString();
             }
+            else {
+
+                HoldemGame.TheComputerPlayer.Fold();
+            }
+
+            txtbxComputerBet.Text = HoldemGame.TheComputerPlayer.PlayerBetAmount.ToString();
+            txtbxComputerMoney.Text = HoldemGame.TheComputerPlayer.PlayerMoney.ToString();
+
+            HoldemGame.TheHumanPlayer.IsMyTurn = true;
+            HoldemGame.TheComputerPlayer.IsMyTurn = false;
         }
     }
 }
