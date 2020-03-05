@@ -3605,6 +3605,9 @@ namespace TexasHoldem {
 
                     HoldemGame.ShuffleDeck();
 
+                    ShowHumanPlayerCards();
+                    ShowFieldCards();
+
                     txtbxPlayerOddsOfWinning.Text = HoldemGame.HumanWinningOdds.ToString();
                     txtbxPlayerOddsOfLosing.Text = HoldemGame.HumanLosingOdds.ToString();
                     txtbxPlayerOddsDraw.Text = HoldemGame.HumanDrawingOdds.ToString();
@@ -3622,6 +3625,9 @@ namespace TexasHoldem {
                 txtbxPot.Text = Convert.ToString(HoldemGame.TheComputerPlayer.PlayerBetAmount + HoldemGame.TheHumanPlayer.PlayerBetAmount);
 
                 HoldemGame.ShuffleDeck();
+
+                ShowHumanPlayerCards();
+                ShowFieldCards();
 
                 txtbxPlayerOddsOfWinning.Text = HoldemGame.HumanWinningOdds.ToString();
                 txtbxPlayerOddsOfLosing.Text = HoldemGame.HumanLosingOdds.ToString();
@@ -3652,6 +3658,9 @@ namespace TexasHoldem {
             txtbxPlayerOddsOfWinning.Text = HoldemGame.HumanWinningOdds.ToString();
             txtbxPlayerOddsOfLosing.Text = HoldemGame.HumanLosingOdds.ToString();
             txtbxPlayerOddsDraw.Text = HoldemGame.HumanDrawingOdds.ToString();
+
+            ShowHumanPlayerCards();
+            ShowFieldCards();
         }
     }
 }
