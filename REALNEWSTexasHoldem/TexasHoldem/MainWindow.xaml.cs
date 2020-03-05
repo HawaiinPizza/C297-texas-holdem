@@ -79,6 +79,8 @@ namespace TexasHoldem {
 
             HoldemGame.TheHumanPlayer.IsMyTurn = true;
             HoldemGame.TheComputerPlayer.IsMyTurn = false;
+
+            ShowAndCompareCards();
         }
 
         private void ComputerTurnIfPlayerRaises() {
@@ -108,6 +110,8 @@ namespace TexasHoldem {
 
             HoldemGame.TheHumanPlayer.IsMyTurn = true;
             HoldemGame.TheComputerPlayer.IsMyTurn = false;
+
+            ShowAndCompareCards();
         }
 
         private void ShowAndCompareCards() {
