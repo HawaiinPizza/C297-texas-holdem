@@ -23,9 +23,7 @@ namespace TexasHoldem {
         List<PokerHand> PokerHands = new List<PokerHand>();
         public PokerHandCon(Card[] cards)
         {
-
             this.PokerHands = PokerHand.GetPoker(cards);
-
         }
 
         public List<PokerHand> GetPokerHands()
@@ -563,7 +561,7 @@ namespace TexasHoldem {
         }
 
         public void ShuffleDeck() {
-
+          
             //This is deck geneartion. 
             //There is 13 values, and 4 suits.
             //0-12 goes from 2 to Ace

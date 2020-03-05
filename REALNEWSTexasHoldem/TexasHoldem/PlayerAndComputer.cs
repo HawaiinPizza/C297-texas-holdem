@@ -20,7 +20,7 @@ namespace TexasHoldem {
             }
             else {
 
-                PlayerMoney -= PlayerBetAmount;
+                PlayerMoney -= 10;
                 PlayerBetAmount = 10;
             }
         }
@@ -59,18 +59,11 @@ namespace TexasHoldem {
 
         public void Call(double OtherPlayerCurrentBet, ref double CurrentPot) {
 
-            if ((PlayerMoney + PlayerBetAmount) < OtherPlayerCurrentBet) {
+            double CurretBetDifference = OtherPlayerCurrentBet - PlayerBetAmount;
 
-                Fold();
-            }
-            else {
-
-                double CurretBetDifference = OtherPlayerCurrentBet - PlayerBetAmount;
-
-                PlayerBetAmount += CurretBetDifference;
-                PlayerMoney -= CurretBetDifference;
-                CurrentPot += CurretBetDifference;
-            }
+            PlayerBetAmount += CurretBetDifference;
+            PlayerMoney -= CurretBetDifference;
+            CurrentPot += CurretBetDifference;
         }
     }
 }
