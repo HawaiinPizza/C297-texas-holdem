@@ -1,53 +1,40 @@
-# Data Sturcutre
-## Combination
+* Data Sturcutre
+** Combination
 	Combination of cards
-## PokerComb
+** PokerHand
 	The type of pokerhand
 	The  cards that make up this pokerhand
-# Get the odds of a player winning and lossing
+* Get the odds of a player winning and lossing
 	- Input: The player's hand, and the field
 	- Output: The odds the player will win givein their hand
-
 1. Get all possiple cards the CPU would have.
 2. Generate all possiple hands/field comibnations the CPU would have
 3. Compare all possiple hands/field combiantions the CPU would have with teh player.
-
-
-
-
-## 1.  Get all possiple cards the CPU would have.
+** DONE 1.  Get all possiple cards the CPU would have.
 	- Input: Player's hand and field
 	- Output: All cards that hte CPU would have.
-
 Create a deck, but if the player and field card is in the supposed deck, remove it.
 Return the new deck
-
-## 2. Generate All possiple hands combinations the CPU would have
+** TODO 2. Generate All possiple hands combinations the CPU would have
 	- Input: The possiple cards the CPU would have
 	- Output: The posspile hand/field combiantions the CPU would have
-
 - Create a list of possisple combiantions
 - Get each combinations of every two cards in the supposed deck, than append those to the list of combiations
 - Return possipleCombaitons
-
-
-## 3 Compare all possiple hands/field combations the CPU would have with the player
+** TODO 3 Compare all possiple hands/field combations the CPU would have with the player
 	- Input : Possiple combiations the CPU could be, the player's hand's, and hte field.
 	- Ouptut: The number of times the player wins, draws and losings
 - 01 Get the possiple pokerCombs the player and CPU would have, given teh field.
 - foreach combination in CPU's hand:
 	- 02  Compare the player and CPU pokerComb, and if any use the excat same cards, remove them.
 	- Increment the number of tiems the player Wins, Loses or draw.
-
-### 01. Get the possiple pokerCombs the player and CPU would have, given teh field.
+*** 01. Get the possiple pokerCombs the player and CPU would have, given teh field.
 	- input: All of the CPU possiple cards, the players hand and teh field
 	- Ouput: All of the possiple combiations of the CPU and player's hand
-
 - Combine player's hadn with the field
 - Store all possiple combianations of that.
 - Do the same for each value of possiple CPU hands.
-
-### 02. Compare the player and CPU pokerComb, and if any use the excat same cards, remove them.
+*** 02. Compare the player and CPU pokerComb, and if any use the excat same cards, remove them.
 	- input: Possiple combiations the player could have, and all possiple combiatons the CPU's hand would have, as well as the field
 	- output: A winner of hte duel
 - 001  Get the possiple pokerComb the player and CPU's combination can use, as well as the cards that make up those values.
@@ -56,11 +43,9 @@ Return the new deck
 	+ return draw
 - else
 	return who ever has the stronger pokerComb
-
-#### 001. Get the possiple pokerCombs the player and CPU's combination can use, as well as the cards that make up those values.
+**** 001. Get the possiple pokerCombs the player and CPU's combination can use, as well as the cards that make up those values.
 	- input: The combination of cards
 	- output: The type of pokerComb the combination has, as well as the cards that make up those values
-
 - Sequential/Flush Checking : Straight/Flush Checking
 	+ Sort Combination
 		+ If there is an Ace and a king, reduce number of sequence you need by 1
@@ -80,5 +65,3 @@ Return the new deck
       + if it's 4: four of a kind
       + if a piar/three of a kind happen at the same time, full house
       + Get value fo teh highest card in combiation, and that's highcard.
-
-

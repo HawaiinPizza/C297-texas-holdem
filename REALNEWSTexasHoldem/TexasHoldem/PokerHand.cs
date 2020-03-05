@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
@@ -6,8 +7,6 @@ using System.Text;
 namespace TexasHoldem {
 
     public class PokerHand : IComparable<PokerHand> {
-
-
 
 
         public double Wins { get; set; }
@@ -124,3 +123,4 @@ namespace TexasHoldem {
         }
     }
 }
+*/

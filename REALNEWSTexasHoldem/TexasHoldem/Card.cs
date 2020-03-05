@@ -14,6 +14,27 @@ namespace TexasHoldem {
             Value = Val;
             Suite = Suit;
         }
+
+        public void Set(int Val, int Suit)
+        {
+            Value = Val;
+            Suite = Suit;
+        }
+        public static bool operator ==(Card left, Card right)
+        {
+            if (left.Value == right.Value && left.Suite == right.Suite)
+                return true;
+            return false;
+        }
+        public static bool operator !=(Card left, Card right)
+        {
+            if (left.Value != right.Value || left.Suite != right.Suite)
+                return true;
+            return false;
+        }
+
+
+
         public string toString()
         {
 
