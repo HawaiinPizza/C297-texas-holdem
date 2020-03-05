@@ -30,11 +30,12 @@ namespace TexasHoldem {
 
             InitializeComponent();
             HoldemGame.ShuffleDeck();
+            HoldemGame.TheHumanPlayer.IsMyTurn = true;
         }
 
         private void BtnRaise_Click(object sender, RoutedEventArgs e){
 
-            if (HoldemGame.TheHumanPlayer.PlayerBetAmount == HoldemGame.TheComputerPlayer.PlayerBetAmount) {
+            if (HoldemGame.TheHumanPlayer.IsMyTurn && HoldemGame.TheHumanPlayer.PlayerBetAmount == HoldemGame.TheComputerPlayer.PlayerBetAmount) {
 
                 double CurrentPot = Convert.ToDouble(txtbxPot.Text);
                 PlayerBet = HoldemGame.TheHumanPlayer.PlayerBetAmount;
@@ -45,15 +46,51 @@ namespace TexasHoldem {
                 txtbxPlayerBet.Text = HoldemGame.TheHumanPlayer.PlayerBetAmount.ToString();
                 txtbxPlayerMoney.Text = HoldemGame.TheHumanPlayer.PlayerMoney.ToString();
                 txtbxPot.Text = CurrentPot.ToString();
+
+                HoldemGame.TheHumanPlayer.IsMyTurn = false;
+                HoldemGame.TheComputerPlayer.IsMyTurn = true;
             }
         }
 
         private void BtnFold_Click(object sender, RoutedEventArgs e) {
 
-            HoldemGame.TheHumanPlayer.Fold();
+            if (HoldemGame.TheHumanPlayer.IsMyTurn) {
 
-            txtbxPlayerBet.Text = HoldemGame.TheHumanPlayer.PlayerBetAmount.ToString();
-            txtbxPlayerMoney.Text = HoldemGame.TheHumanPlayer.PlayerMoney.ToString();
+                HoldemGame.TheHumanPlayer.Fold();
+
+                txtbxPlayerBet.Text = HoldemGame.TheHumanPlayer.PlayerBetAmount.ToString();
+                txtbxPlayerMoney.Text = HoldemGame.TheHumanPlayer.PlayerMoney.ToString();
+
+                HoldemGame.TheHumanPlayer.IsMyTurn = false;
+                HoldemGame.TheComputerPlayer.IsMyTurn = true;
+            }    
+        }
+
+        private void BtnNeither_Click(object sender, RoutedEventArgs e) {
+
+
+        }
+
+        private void ComputerTurnIfPlayerRaises() {
+
+            if (HoldemGame.ComputerWinningOdds >= 50.0) {  
+
+                if (HoldemGame.TheComputerPlayer.PlayerMoney + HoldemGame.TheComputerPlayer.PlayerBetAmount !< HoldemGame.TheHumanPlayer.PlayerBetAmount) {
+
+                    double CurrentPot = Convert.ToDouble(txtbxPot.Text);
+
+                    HoldemGame.TheComputerPlayer.Call(HoldemGame.TheHumanPlayer.PlayerBetAmount, ref CurrentPot);
+
+                    txtbxPot.Text = CurrentPot.ToString();
+                }
+                else {
+
+                    HoldemGame.TheComputerPlayer.Fold();
+                }
+
+                txtbxComputerBet.Text = HoldemGame.TheComputerPlayer.PlayerBetAmount.ToString();
+                txtbxComputerMoney.Text = HoldemGame.TheComputerPlayer.PlayerMoney.ToString();
+            }
         }
     }
 }
