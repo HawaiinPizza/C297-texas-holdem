@@ -725,14 +725,12 @@ namespace TexasHoldem {
 
             var what=GetPossipleCards(Field, Player);
             int size = 0;
-            Card[] Intro = new Card[7];
+            Card[] Intro = new Card[5];
             Intro[0] = Field[0];
-            Intro[1] = Field[1];
-            Intro[2] = Field[2];
-            Intro[3] = Field[3];
-            Intro[4] = Field[4];
-            Intro[5] = Player[0];
-            Intro[6] = Player[1];
+            Intro[1] = Field[2];
+            Intro[2] = Field[4];
+            Intro[3] = Player[0];
+            Intro[4] = Player[1];
             Comb PlayerComb = new Comb(Intro);
             int wins = 0;
             int draws = 0;
@@ -762,6 +760,9 @@ namespace TexasHoldem {
                 else if (tempCom == PlayerComb)
                     draws++;
             }
+            HumanWinningOdds= wins;
+            HumanLosingOdds= loses;
+            HumanDrawingOdds= draws;
             Console.WriteLine("Wins "+wins + "\tLoses " + loses + "\tDraws " + draws + "\t Total size"+(wins+loses+draws));
 
             /*
