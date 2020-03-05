@@ -47,7 +47,7 @@ namespace TexasHoldem {
         }
 
     }
-    class PokerHand
+    public class PokerHand
     {
         public PokerType Type;
         public List<Card> cards = new List<Card>();
@@ -307,7 +307,7 @@ namespace TexasHoldem {
 
     }
 
-    class Comb
+    public class Comb
     {
         public List<PokerHand> PokerHands = new List<PokerHand>();
         public Card[] PosComb = new Card[5];
