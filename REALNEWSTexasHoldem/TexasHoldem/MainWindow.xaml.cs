@@ -31,11 +31,802 @@ namespace TexasHoldem {
             InitializeComponent();
             HoldemGame.ShuffleDeck();
             HoldemGame.TheHumanPlayer.IsMyTurn = true;
+
+            ShowHumanPlayerCards();
         }
 
-        private void ShowFieldAndHumanPlayerCards() {
+        private void ShowHumanPlayerCards() {
 
+            int x = 0;
+            while (x < 2) {
 
+                switch (HoldemGame.PlayerHand[x].Value) {
+
+                    case 0:
+                        switch (HoldemGame.PlayerHand[x].Suite) {
+
+                            case 0:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\2S.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\2S.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 1:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\2C.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\2C.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 2:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\2H.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\2H.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 3:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\2D.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\2D.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            default:
+                                break;
+                        }
+                        break;
+
+                    case 1:
+                        switch (HoldemGame.PlayerHand[x].Suite) {
+
+                            case 0:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\3S.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\3S.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 1:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\3C.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\3C.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 2:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\3H.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\3H.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 3:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\3D.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\3D.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            default:
+                                break;
+                        }
+                        break;
+
+                    case 2:
+                        switch (HoldemGame.PlayerHand[x].Suite) {
+
+                            case 0:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\4S.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\4S.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 1:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\4C.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\4C.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 2:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\4H.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\4H.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 3:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\4D.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\4D.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            default:
+                                break;
+                        }
+                        break;
+
+                    case 3:
+                        switch (HoldemGame.PlayerHand[x].Suite) {
+
+                            case 0:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\5S.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\5S.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 1:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\5C.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\5C.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 2:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\5H.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\5H.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 3:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\5D.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\5D.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            default:
+                                break;
+                        }
+                        break;
+
+                    case 4:
+                        switch (HoldemGame.PlayerHand[x].Suite) {
+
+                            case 0:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\6S.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\6S.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 1:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\6C.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\6C.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 2:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\6H.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\6H.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 3:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\6D.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\6D.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            default:
+                                break;
+                        }
+                        break;
+
+                    case 5:
+                        switch (HoldemGame.PlayerHand[x].Suite) {
+
+                            case 0:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\7S.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\7S.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 1:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\7C.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\7C.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 2:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\7H.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\7H.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 3:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\7D.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\7D.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            default:
+                                break;
+                        }
+                        break;
+
+                    case 6:
+                        switch (HoldemGame.PlayerHand[x].Suite) {
+
+                            case 0:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\8S.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\8S.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 1:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\8C.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\8C.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 2:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\8H.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\8H.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 3:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\8D.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\8D.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            default:
+                                break;
+                        }
+                        break;
+
+                    case 7:
+                        switch (HoldemGame.PlayerHand[x].Suite) {
+
+                            case 0:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\9S.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\9S.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 1:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\9C.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\9C.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 2:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\9H.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\9H.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 3:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\9D.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\9D.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            default:
+                                break;
+                        }
+                        break;
+
+                    case 8:
+                        switch (HoldemGame.PlayerHand[x].Suite) {
+
+                            case 0:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\10S.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\10S.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 1:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\10C.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\10C.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 2:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\10H.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\10H.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 3:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\10D.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\10D.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            default:
+                                break;
+                        }
+                        break;
+
+                    case 9:
+                        switch (HoldemGame.PlayerHand[x].Suite) {
+
+                            case 0:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\JS.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\JS.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 1:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\JC.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\JC.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 2:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\JH.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\JH.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 3:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\JD.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\JD.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            default:
+                                break;
+                        }
+                        break;
+
+                    case 10:
+                        switch (HoldemGame.PlayerHand[x].Suite) {
+
+                            case 0:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\QS.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\QS.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 1:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\QC.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\QC.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 2:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\QH.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\QH.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 3:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\QD.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\QD.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            default:
+                                break;
+                        }
+                        break;
+
+                    case 11:
+                        switch (HoldemGame.PlayerHand[x].Suite) {
+
+                            case 0:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\KS.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\KS.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 1:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\KC.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\KC.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 2:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\KH.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\KH.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 3:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\KD.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\KD.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            default:
+                                break;
+                        }
+                        break;
+
+                    case 12:
+                        switch (HoldemGame.PlayerHand[x].Suite) {
+
+                            case 0:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\AS.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\AS.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 1:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\AC.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\AC.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 2:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\AH.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\AH.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            case 3:
+                                switch (x) {
+
+                                    case 0:
+                                        imgPlayerFirstCard.Source = new BitmapImage(new Uri(@"\cs\AD.png", UriKind.Relative));
+                                        break;
+
+                                    case 1:
+                                        imgPlayerSecondCard.Source = new BitmapImage(new Uri(@"\cs\AD.png", UriKind.Relative));
+                                        break;
+                                }
+                                break;
+
+                            default:
+                                break;
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
+                x++;
+            }
         }
 
         private void BtnRaise_Click(object sender, RoutedEventArgs e){
