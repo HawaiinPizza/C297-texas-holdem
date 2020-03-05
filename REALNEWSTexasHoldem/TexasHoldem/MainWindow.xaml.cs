@@ -77,10 +77,10 @@ namespace TexasHoldem {
 
 
 
+            ShowAndCompareCards();
+
             HoldemGame.TheHumanPlayer.IsMyTurn = true;
             HoldemGame.TheComputerPlayer.IsMyTurn = false;
-
-            ShowAndCompareCards();
         }
 
         private void ComputerTurnIfPlayerRaises() {
@@ -108,10 +108,10 @@ namespace TexasHoldem {
             txtbxComputerBet.Text = HoldemGame.TheComputerPlayer.PlayerBetAmount.ToString();
             txtbxComputerMoney.Text = HoldemGame.TheComputerPlayer.PlayerMoney.ToString();
 
+            ShowAndCompareCards();
+
             HoldemGame.TheHumanPlayer.IsMyTurn = true;
             HoldemGame.TheComputerPlayer.IsMyTurn = false;
-
-            ShowAndCompareCards();
         }
 
         private void ShowAndCompareCards() {
