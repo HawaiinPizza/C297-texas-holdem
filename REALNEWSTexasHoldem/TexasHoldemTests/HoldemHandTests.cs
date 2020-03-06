@@ -4,15 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace TexasHoldem.Tests
-{
+namespace TexasHoldem.Tests {
+
     [TestClass()]
-    public class HoldemHandTests
-    {
+    public class HoldemHandTests {
+
         [TestMethod()]
-        public void CombinationEqualsTest()
-        {
-            // Arrange
+        public void CombinationEqualsTest() {
+
             // Arrange
             Card[] cards1 = new Card[5];
             Card[] cards2 = new Card[5];
@@ -54,8 +53,6 @@ namespace TexasHoldem.Tests
             Console.WriteLine("\n2\n{0}\n", combination2.ToString());
             Console.WriteLine("\n3\n{0}\n", combination3.ToString());
             Console.WriteLine("\n4\n{0}\n", combination4.ToString());
-            /*
-            */
 
             Assert.IsFalse(combination1 > combination4);
             Assert.IsFalse(combination2 > combination4);
@@ -65,9 +62,8 @@ namespace TexasHoldem.Tests
         }
 
         [TestMethod()]
-        public void CombinationLessTest()
-        {
-            // Arrange
+        public void CombinationLessTest() {
+
             // Arrange
             Card[] cards1 = new Card[5];
             Card[] cards2 = new Card[5];
@@ -109,8 +105,6 @@ namespace TexasHoldem.Tests
             Console.WriteLine("\n2\n{0}\n", combination2.ToString());
             Console.WriteLine("\n3\n{0}\n", combination3.ToString());
             Console.WriteLine("\n4\n{0}\n", combination4.ToString());
-            /*
-            */
 
             Assert.IsFalse(combination1 == combination3);
             Assert.IsFalse(combination1 == combination4);
@@ -131,9 +125,8 @@ namespace TexasHoldem.Tests
         }
 
         [TestMethod()]
-        public void CombinationGreaterTest()
-        {
-            // Arrange
+        public void CombinationGreaterTest() {
+
             // Arrange
             Card[] cards1 = new Card[5];
             Card[] cards2 = new Card[5];
@@ -175,8 +168,6 @@ namespace TexasHoldem.Tests
             Console.WriteLine("\n2\n{0}\n", combination2.ToString());
             Console.WriteLine("\n3\n{0}\n", combination3.ToString());
             Console.WriteLine("\n4\n{0}\n", combination4.ToString());
-            /*
-            */
 
             Assert.IsFalse(combination1 < combination1);
             Assert.IsFalse(combination1 < combination2);
@@ -193,6 +184,5 @@ namespace TexasHoldem.Tests
             Assert.IsTrue(combination2 < combination4);
             Assert.IsTrue(combination3 < combination1);
         }
-
     }
 }
