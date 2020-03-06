@@ -763,14 +763,9 @@ namespace TexasHoldem {
 
             Comb PlayerComb = new Comb();
             PlayerComb = PlayerCombs[0];
-<<<<<<< HEAD
 
             for (int i = 0; i < 21; i++) {
 
-=======
-            for (int i=0; i<21; i++)
-            {
->>>>>>> c107373981a69e14a73aa05c0789d49af0b8d854
                 if (PlayerComb < PlayerCombs[i])
                     PlayerComb = PlayerCombs[i];
             }
@@ -842,99 +837,7 @@ namespace TexasHoldem {
                 TempComb[i] = Te;
             }
 
-<<<<<<< HEAD
             return TempComb;
-=======
-                Comb tempCom = new Comb(cards);
-                //foreach(var tempTemp in tempCom.PokerHands)
-                //{
-                //    if (tempTemp.Type == PokerType.StraightFlush)
-                //        //Console.writeline("RAIN DRAPO\t"+tempTemp.value);
-                //}
-                if (tempCom < PlayerComb)
-                    wins++;
-                else if (tempCom > PlayerComb)
-                    loses++;
-                else if (tempCom == PlayerComb)
-                    draws++;
-            }
-            HumanWinningOdds= wins;
-            HumanLosingOdds= loses;
-            ComputerWinningOdds = loses;
-            HumanDrawingOdds= draws;
-            //Console.writeline("Wins "+wins + "\tLoses " + loses + "\tDraws " + draws + "\t Total size"+(wins+loses+draws));
-
-            /*
-            List<Card> A1 = new List<Card>();
-            List<Card> A2 = new List<Card>();
-            A1.Add(Field[0]);
-            A1.Add(Field[1]);
-            A1.Add(Field[2]);
-            A1.Add(Field[3]);
-            A1.Add(Field[4]);
-            A2.Add(Field[0]);
-            A2.Add(Field[1]);
-            A2.Add(Field[2]);
-            A2.Add(Field[3]);
-            A2.Add(Field[4]);
-            PokerHand poker1= new PokerHand(PokerType.Pair,A1, 2);
-            PokerHand poker2= new PokerHand(PokerType.Pair, A2, 4 );
-            A2[2] = Player[0];
-            PokerHand poker3= new PokerHand(PokerType.Pair, A2, 1 );
-            Comb Comb1 = new Comb(Field);
-            Comb Comb2 = new Comb(Field);
-            Comb1.pushPokerHand(poker1);
-            Comb2.pushPokerHand(poker2);
-            //Console.writeline("EYA\t");
-            //Console.writeline(Comb1.GetBest().ToString());
-            //Console.writeline(Comb1 == Comb2);
-            //Console.writeline(Comb1 < Comb2);
-            //Console.writeline(Comb1 > Comb2);
-            Comb1.pushPokerHand(poker3);
-            //Console.writeline("NO\t");
-            //Console.writeline(Comb1 == Comb2);
-            //Console.writeline(Comb1 < Comb2);
-            //Console.writeline(Comb1 > Comb2);
-            PokerHandCon test1 = new PokerHandCon(Field);
-            //Console.writeline("JOJO");
-            //Console.writeline(test1.toString());
-            */
-            //PokerType Type;
-            //List<Card> cards = new List<Card>();
-            
-            //ShuffleDeck();
-            /*
-            Card broly = new Card(2, 4);
-            Card goku = new Card(2, 4);
-            Card muaz = new Card(-1, 4);
-            Dictionary<int, List<Card>> temp = new Dictionary<int, List<Card>>();
-            List<Card> VEGETA = new List<Card>();
-            Card[] Cam = new Card[6];
-            Cam[0] = broly;
-            Cam[1] = goku;
-            Cam[2] = muaz;
-            Cam[3] = broly;
-            Cam[4] = goku;
-            Cam[5] = muaz;
-            for (int i = 0; i < 3; i++)
-            {
-                if (temp.ContainsKey(Cam[i].Value))
-                {
-                    temp[Cam[i].Value].Add(Cam[i]);
-                }
-                else
-                {
-                    temp[Cam[i].Value] = new List<Card>();
-                    temp[Cam[i].Value].Add(Cam[i]);
-                }
-                ////Console.writeline("This is a meem{0}", temp[Cam[i].Value].Count);
-            }
-            foreach(var keyVal in temp)
-            {
-                //Console.writeline("{0} OH SHIT {1}", keyVal.Value.Count, keyVal.Key);
-            }
-        */
->>>>>>> c107373981a69e14a73aa05c0789d49af0b8d854
         }
     }
 }
