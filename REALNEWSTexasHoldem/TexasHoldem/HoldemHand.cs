@@ -263,13 +263,6 @@ namespace TexasHoldem {
                 ReturnHand.Add(FUCK);
             }
             return ReturnHand;
-               
-
-
-
-
-
-
 
         }
 
@@ -280,18 +273,21 @@ namespace TexasHoldem {
 
         public static bool operator<(PokerHand left, PokerHand right)
         {
+            //Console.Write("Wow: " + left.value +"\t");
+            //Console.WriteLine(right.value);
             return left.value < right.value;
         }
 
         public static bool operator>(PokerHand left, PokerHand right)
         {
+            //Console.Write("Wow: " + left.value +"\t");
+            //Console.WriteLine(right.value);
             return left.value > right.value;
         }
 
         // Assume 
         public static bool operator==(PokerHand left, PokerHand right)
         {
-
 
             if (left.Type == right.Type)
             {
@@ -386,35 +382,43 @@ namespace TexasHoldem {
 
 
 
-        public static bool operator==(Comb left, Comb right)
+        public static bool operator ==(Comb left, Comb right)
         {
             List<PokerHand> NuLeft = new List<PokerHand>();
             List<PokerHand> NuRight = new List<PokerHand>();
-            NuLeft = left.PokerHands;
-            NuRight = right.PokerHands;
-            int size = 0;
-            int LeftSize = NuLeft.Count();
-            int RightSize = NuRight.Count();
-            for(int i=0; i<NuLeft.Count(); i++)
+            foreach(PokerHand temp in left.PokerHands)
             {
+                NuLeft.Add(temp);
+            }
+            foreach(PokerHand temp in right.PokerHands)
+            {
+                NuRight.Add(temp);
+            }
+            int size = 0;
+            //Console.WriteLine("Before {0} Quack {1}", LeftSize, RightSize);
+            for (int i = 0; i < NuLeft.Count(); i++)
+            {
+
                 for (int j = 0; j < NuRight.Count(); j++)
                 {
                     if (NuLeft[i] == NuRight[j])
                     {
                         NuLeft.RemoveAt(i);
                         NuRight.RemoveAt(j);
-                        Console.WriteLine("{0} Quack {1}", LeftSize, RightSize);
                         size++;
                     }
                 }
             }
-            Console.WriteLine(NuLeft.Count() + " Tellin lies?");
-            Console.WriteLine(NuRight.Count() + " Tellin lies?");
 
-            if (size == 0 || (NuLeft.Count()==1 && NuRight.Count()==1))
+            if (size == 1)
             {
+                //Console.WriteLine("THIs comaprisions is beteween NULEFT {0}\n\nAND NEWRIGHT{1}", NuLeft[0].ToString(), NuRight[0].ToString());
                 return true;
+                //return NuLeft[0] == NuRight[0];
             }
+
+            if (NuLeft.Count()==1 && NuRight.Count()==1 )
+                return true;
             else
                 return false;
 
@@ -423,8 +427,14 @@ namespace TexasHoldem {
         {
             List<PokerHand> NuLeft = new List<PokerHand>();
             List<PokerHand> NuRight = new List<PokerHand>();
-            NuLeft = left.PokerHands;
-            NuRight = right.PokerHands;
+            foreach(PokerHand temp in left.PokerHands)
+            {
+                NuLeft.Add(temp);
+            }
+            foreach(PokerHand temp in right.PokerHands)
+            {
+                NuRight.Add(temp);
+            }
             int size = 0;
             for(int i=0; i<NuLeft.Count(); i++)
             {
@@ -470,9 +480,15 @@ namespace TexasHoldem {
         {
             List<PokerHand> NuLeft = new List<PokerHand>();
             List<PokerHand> NuRight = new List<PokerHand>();
-            NuLeft = left.PokerHands;
-            NuRight = right.PokerHands;
-            int size = 0;
+            foreach(PokerHand temp in left.PokerHands)
+            {
+                NuLeft.Add(temp);
+            }
+            foreach(PokerHand temp in right.PokerHands)
+            {
+                NuRight.Add(temp);
+            }
+
             for(int i=0; i<NuLeft.Count(); i++)
             {
                 for (int j = 0; j < NuRight.Count(); j++)
@@ -481,26 +497,32 @@ namespace TexasHoldem {
                     {
                         NuLeft.RemoveAt(i);
                         NuRight.RemoveAt(j);
-                        size++;
                     }
                 }
             }
 
-            if (NuLeft.Count() == 0 && NuRight.Count() == 0 || NuLeft.Count() == 0)
-                return false;
-            else if (NuRight.Count == 0)
+
+
+            if (NuRight.Count == 0)
+            {
+                Console.WriteLine("Black man");
                 return true;
+            }
             else
             {
 
+                Console.WriteLine("Black man");
                 PokerHand Left = GetBestStatic(NuLeft);
-                PokerHand Right = GetBestStatic(NuLeft);
+                PokerHand Right = GetBestStatic(NuRight);
+                Console.WriteLine("Left is {0} \n\n Right {1}", Left.ToString(), Right.ToString());
 
-                return Left > Right;
+                return Left < Right;
             }
         }
-        public static bool operator >(Comb left, Comb right)
+        public static bool operator>(Comb left, Comb right)
         {
+            if (left == right)
+                return false;
             List<PokerHand> NuLeft = new List<PokerHand>();
             List<PokerHand> NuRight = new List<PokerHand>();
             NuLeft = left.PokerHands;
@@ -519,15 +541,14 @@ namespace TexasHoldem {
                 }
             }
 
-            if (NuLeft.Count() == 0 && NuRight.Count() == 0 || NuRight.Count()==0)
-                return false;
-            else if (NuLeft.Count == 0)
+            if (NuLeft.Count == 0)
                 return true;
             else
             {
 
                 PokerHand Left = GetBestStatic(NuLeft);
-                PokerHand Right = GetBestStatic(NuLeft);
+                PokerHand Right = GetBestStatic(NuRight);
+                //Console.WriteLine("Copmaring {0} And\n {1}", Left.ToString(), Right.ToString());
 
                 return Left > Right;
             }
@@ -897,31 +918,93 @@ namespace TexasHoldem {
         {
 
             // Arrange
-            Card[] cards = new Card[5];
             Card[] cards1 = new Card[5];
+            Card[] cards2 = new Card[5];
+            Card[] cards3 = new Card[5];
+            Card[] cards4 = new Card[5];
 
             // Act
-            cards[0].Set(2, 3);
-            cards[1].Set(1, 0);
-            cards[2].Set(7, 2);
-            cards[3].Set(6, 2);
-            cards[4].Set(6, 0);
+            cards1[0].Set(1, 3);
+            cards1[1].Set(2, 0);
+            cards1[2].Set(3, 2);
+            cards1[3].Set(4, 2);
+            cards1[4].Set(5, 0);
 
-            cards1[0].Set(2, 3);
-            cards1[1].Set(1, 0);
-            cards1[2].Set(7, 2);
-            cards1[3].Set(6, 2);
-            cards1[4].Set(6, 0);
+            cards2[0].Set(1, 3);
+            cards2[1].Set(2, 0);
+            cards2[2].Set(3, 2);
+            cards2[3].Set(4, 2);
+            cards2[4].Set(5, 0);
 
-            Comb combinationOne = new Comb(cards);
-            Comb combinationTwo = new Comb(cards1);
+            cards3[0].Set(6, 3);
+            cards3[1].Set(6, 0);
+            cards3[2].Set(9, 2);
+            cards3[3].Set(9, 2);
+            cards3[4].Set(1, 1);
 
-            Console.WriteLine(combinationOne.ToString());
-            Console.WriteLine(combinationTwo.ToString());
+            cards4[0].Set(1, 3);
+            cards4[1].Set(1, 0);
+            cards4[2].Set(2, 2);
+            cards4[3].Set(2, 1);
+            cards4[4].Set(2, 2);
 
-            Console.WriteLine(combinationOne == combinationTwo);
+            Comb combination1 = new Comb(cards1);
+            Comb combination2 = new Comb(cards2);
+            Comb combination3 = new Comb(cards2);
+            Comb combination4 = new Comb(cards4);
+
+            Console.WriteLine(combination1.ToString());
+            Console.WriteLine("\n\n");
+            Console.WriteLine(combination2.ToString());
 
             // Assert
+            Console.WriteLine("Stage 0\n");
+            Console.WriteLine("\n{0}\n", combination1.ToString());
+            Console.WriteLine("\n{0}\n", combination2.ToString());
+            Console.WriteLine("\n{0}\n", combination3.ToString());
+            Console.WriteLine("\n{0}\n", combination4.ToString());
+
+            Console.WriteLine("Stage1\n\n");
+            Console.WriteLine(combination1 == combination1);
+            Console.WriteLine(combination1 == combination2);
+            Console.WriteLine(combination1 == combination3);
+            Console.WriteLine(combination1 == combination4);
+            Console.WriteLine("2\n");
+            Console.WriteLine(combination2 == combination1);
+            Console.WriteLine(combination2 == combination2);
+            Console.WriteLine(combination2 == combination3);
+            Console.WriteLine(combination2 == combination4);
+            Console.WriteLine("3\n");
+            Console.WriteLine(combination3 == combination1);
+            Console.WriteLine(combination3 == combination2);
+            Console.WriteLine(combination3 == combination3);
+            Console.WriteLine(combination3 == combination4);
+            Console.WriteLine("4\n");
+            Console.WriteLine(combination4 == combination1);
+            Console.WriteLine(combination4 == combination2);
+            Console.WriteLine(combination4 == combination3);
+            Console.WriteLine(combination4 == combination4);
+
+            /*
+            Console.WriteLine("Stage2");
+            Console.WriteLine(combination1 < combination2);
+            Console.WriteLine("\t What?\t");
+            //Console.WriteLine(combination4 < combination4);
+            Console.WriteLine(combination2 < combination3);
+            Console.WriteLine(combination3 < combination4);
+            Console.WriteLine(combination4 < combination1);
+            Console.WriteLine(combination4 < combination3);
+
+            Console.WriteLine("Stage3");
+            Console.WriteLine(combination1 > combination2);
+            Console.WriteLine(combination4 > combination4);
+            Console.WriteLine(combination2 > combination3);
+            Console.WriteLine(combination3 > combination4);
+            Console.WriteLine(combination4 > combination1);
+            Console.WriteLine(combination4 > combination3);
+
+            */
+            
         }
         public void Testa()
         {
@@ -992,41 +1075,31 @@ namespace TexasHoldem {
             A2.Add(Field[2]);
             A2.Add(Field[3]);
             A2.Add(Field[4]);
-
             PokerHand poker1= new PokerHand(PokerType.Pair,A1, 2);
             PokerHand poker2= new PokerHand(PokerType.Pair, A2, 4 );
             A2[2] = Player[0];
             PokerHand poker3= new PokerHand(PokerType.Pair, A2, 1 );
-
             Comb Comb1 = new Comb(Field);
             Comb Comb2 = new Comb(Field);
             Comb1.pushPokerHand(poker1);
             Comb2.pushPokerHand(poker2);
-
             Console.WriteLine("EYA\t");
-
             Console.WriteLine(Comb1.GetBest().ToString());
             Console.WriteLine(Comb1 == Comb2);
             Console.WriteLine(Comb1 < Comb2);
             Console.WriteLine(Comb1 > Comb2);
-
             Comb1.pushPokerHand(poker3);
             Console.WriteLine("NO\t");
             Console.WriteLine(Comb1 == Comb2);
             Console.WriteLine(Comb1 < Comb2);
             Console.WriteLine(Comb1 > Comb2);
-
             PokerHandCon test1 = new PokerHandCon(Field);
             Console.WriteLine("JOJO");
             Console.WriteLine(test1.toString());
             */
-
-
-
             //PokerType Type;
             //List<Card> cards = new List<Card>();
             
-
             //ShuffleDeck();
             /*
             Card broly = new Card(2, 4);
@@ -1051,7 +1124,6 @@ namespace TexasHoldem {
                 {
                     temp[Cam[i].Value] = new List<Card>();
                     temp[Cam[i].Value].Add(Cam[i]);
-
                 }
                 //Console.WriteLine("This is a meem{0}", temp[Cam[i].Value].Count);
             }
@@ -1059,7 +1131,6 @@ namespace TexasHoldem {
             {
                 Console.WriteLine("{0} OH SHIT {1}", keyVal.Value.Count, keyVal.Key);
             }
-
         */
         }
     }
