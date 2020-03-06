@@ -3536,7 +3536,7 @@ namespace TexasHoldem {
 
         private void BtnFold_Click(object sender, RoutedEventArgs e) {
 
-            if (HoldemGame.TheHumanPlayer.IsMyTurn) {
+            if (HoldemGame.TheHumanPlayer.IsMyTurn && ((HoldemGame.TheHumanPlayer.PlayerMoney + HoldemGame.TheHumanPlayer.PlayerBetAmount) != 0 )) {
 
                 HoldemGame.TheHumanPlayer.Fold();
 
@@ -3583,7 +3583,6 @@ namespace TexasHoldem {
 
         private void ComputerTurnIfPlayerRaises() {
 
-            /*
             if ((HoldemGame.TheComputerPlayer.PlayerMoney + HoldemGame.TheComputerPlayer.PlayerBetAmount) !< HoldemGame.TheHumanPlayer.PlayerBetAmount) {
                 
                 if (HoldemGame.ComputerWinningOdds >= 50.0) {
@@ -3643,7 +3642,6 @@ namespace TexasHoldem {
 
             HoldemGame.TheHumanPlayer.IsMyTurn = true;
             HoldemGame.TheComputerPlayer.IsMyTurn = false;
-            */
         }
 
         private void ComputerTurnIfPlayerNeitherFoldsNorRaises() {

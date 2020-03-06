@@ -611,8 +611,8 @@ namespace TexasHoldem {
             }
 
 
-            Random rand = new Random(05162000);
-            //Random rand = new Random();
+            //Random rand = new Random(05162000);
+            Random rand = new Random();
 
             //This is shuffling a deck, with a seed so we can predict outcomes. BTW seed is my birthdate (Zaki)
             for (int i = 0; i < Deck.Length - 1; i++) {
