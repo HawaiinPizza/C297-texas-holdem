@@ -792,9 +792,15 @@ namespace TexasHoldem {
                     draws++;
             }
 
-            HumanWinningOdds = wins;
-            HumanLosingOdds = loses;
-            HumanDrawingOdds = draws;
+            double temp = 100*wins / (wins + loses + draws);
+            HumanWinningOdds = temp;
+
+            temp = 100*loses / (wins + loses + draws);
+            HumanLosingOdds = temp;
+            ComputerWinningOdds = temp;
+
+            temp = 100*draws / (wins + loses + draws);
+            HumanDrawingOdds = temp;
         }
 
         public Comb[] GetCombs(Card[] Cards) {
