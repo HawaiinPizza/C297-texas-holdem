@@ -3562,19 +3562,21 @@ namespace TexasHoldem {
 
         private void PlayerWins() {
 
-            HoldemGame.TheComputerPlayer.PlayerMoney += Convert.ToDouble(txtbxPot.Text) + 10;
+            HoldemGame.TheHumanPlayer.PlayerMoney += Convert.ToDouble(txtbxPot.Text) - 10;
+            HoldemGame.TheHumanPlayer.PlayerBetAmount = 10.0;
+
             HoldemGame.TheComputerPlayer.PlayerBetAmount = 10.0;
 
             txtbxComputerMoney.Text = HoldemGame.TheComputerPlayer.PlayerMoney.ToString();
             txtbxComputerBet.Text = HoldemGame.TheComputerPlayer.PlayerBetAmount.ToString();
 
+            txtbxPlayerMoney.Text = HoldemGame.TheHumanPlayer.PlayerMoney.ToString();
+            txtbxPlayerBet.Text = HoldemGame.TheHumanPlayer.PlayerBetAmount.ToString();
+
             txtbxPot.Text = Convert.ToString(HoldemGame.TheComputerPlayer.PlayerBetAmount + HoldemGame.TheHumanPlayer.PlayerBetAmount);
 
             HoldemGame.ShuffleDeck();
             HoldemGame.Odds();
-
-            HoldemGame.TheHumanPlayer.IsMyTurn = true;
-            HoldemGame.TheComputerPlayer.IsMyTurn = false;
 
             ShowHumanPlayerCards();
             ShowFieldCards();
@@ -3584,21 +3586,25 @@ namespace TexasHoldem {
             txtbxPlayerOddsOfLosing.Text = HoldemGame.HumanLosingOdds.ToString();
             txtbxPlayerOddsDraw.Text = HoldemGame.HumanDrawingOdds.ToString();
         }
+
         private void PlayerDraws() {
 
-            HoldemGame.TheComputerPlayer.PlayerMoney += Convert.ToDouble(txtbxPot.Text) ;
-            HoldemGame.TheComputerPlayer.PlayerBetAmount = 10.0;
+            if (HoldemGame.TheComputerPlayer.PlayerBetAmount > 10) {
 
-            txtbxComputerMoney.Text = HoldemGame.TheComputerPlayer.PlayerMoney.ToString();
-            txtbxComputerBet.Text = HoldemGame.TheComputerPlayer.PlayerBetAmount.ToString();
+                HoldemGame.TheComputerPlayer.PlayerMoney += 10.0;
+                HoldemGame.TheComputerPlayer.PlayerBetAmount = 10.0;
+            }
+
+            if (HoldemGame.TheHumanPlayer.PlayerBetAmount > 10) {
+
+                HoldemGame.TheHumanPlayer.PlayerMoney += 10.0;
+                HoldemGame.TheHumanPlayer.PlayerBetAmount = 10.0;
+            }
 
             txtbxPot.Text = Convert.ToString(HoldemGame.TheComputerPlayer.PlayerBetAmount + HoldemGame.TheHumanPlayer.PlayerBetAmount);
 
             HoldemGame.ShuffleDeck();
             HoldemGame.Odds();
-
-            HoldemGame.TheHumanPlayer.IsMyTurn = true;
-            HoldemGame.TheComputerPlayer.IsMyTurn = false;
 
             ShowHumanPlayerCards();
             ShowFieldCards();
@@ -3608,6 +3614,7 @@ namespace TexasHoldem {
             txtbxPlayerOddsOfLosing.Text = HoldemGame.HumanLosingOdds.ToString();
             txtbxPlayerOddsDraw.Text = HoldemGame.HumanDrawingOdds.ToString();
         }
+
         private void ComputerTurnIfPlayerFolds() {
 
             HoldemGame.TheComputerPlayer.PlayerMoney += Convert.ToDouble(txtbxPot.Text) - 10;
@@ -3632,6 +3639,7 @@ namespace TexasHoldem {
             txtbxPlayerOddsOfLosing.Text = HoldemGame.HumanLosingOdds.ToString();
             txtbxPlayerOddsDraw.Text = HoldemGame.HumanDrawingOdds.ToString();
         }
+
         private void PlayerLoses() {
 
             HoldemGame.TheComputerPlayer.PlayerMoney += Convert.ToDouble(txtbxPot.Text) - 10;
@@ -3640,13 +3648,12 @@ namespace TexasHoldem {
             txtbxComputerMoney.Text = HoldemGame.TheComputerPlayer.PlayerMoney.ToString();
             txtbxComputerBet.Text = HoldemGame.TheComputerPlayer.PlayerBetAmount.ToString();
 
+            HoldemGame.TheHumanPlayer.Fold();
+
             txtbxPot.Text = Convert.ToString(HoldemGame.TheComputerPlayer.PlayerBetAmount + HoldemGame.TheHumanPlayer.PlayerBetAmount);
 
             HoldemGame.ShuffleDeck();
             HoldemGame.Odds();
-
-            HoldemGame.TheHumanPlayer.IsMyTurn = true;
-            HoldemGame.TheComputerPlayer.IsMyTurn = false;
 
             ShowHumanPlayerCards();
             ShowFieldCards();
@@ -3732,7 +3739,7 @@ namespace TexasHoldem {
 
         private void ComputerTurnIfPlayerNeitherFoldsNorRaises() {
 
-            ShowComputerCardsAndCompare();
+            CompareCards();
 
             HoldemGame.TheHumanPlayer.IsMyTurn = true;
             HoldemGame.TheComputerPlayer.IsMyTurn = false;
