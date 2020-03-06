@@ -3650,6 +3650,8 @@ namespace TexasHoldem {
 
             HoldemGame.TheHumanPlayer.Fold();
 
+            txtbxPlayerBet.Text = HoldemGame.TheHumanPlayer.PlayerBetAmount.ToString();
+
             txtbxPot.Text = Convert.ToString(HoldemGame.TheComputerPlayer.PlayerBetAmount + HoldemGame.TheHumanPlayer.PlayerBetAmount);
 
             HoldemGame.ShuffleDeck();
