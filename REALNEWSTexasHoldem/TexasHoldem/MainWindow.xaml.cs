@@ -3659,15 +3659,19 @@ namespace TexasHoldem {
 
         private void ComputerTurnIfPlayerRaises() {
 
-            if ((HoldemGame.TheComputerPlayer.PlayerMoney + HoldemGame.TheComputerPlayer.PlayerBetAmount) !< HoldemGame.TheHumanPlayer.PlayerBetAmount) {
-                
-                if (HoldemGame.ComputerWinningOdds >= 1) {
+
+            Console.WriteLine("Total Moeny {0}", HoldemGame.TheComputerPlayer.PlayerMoney + HoldemGame.TheComputerPlayer.PlayerBetAmount);
+            Console.WriteLine("Bet amount{0}", HoldemGame.TheHumanPlayer.PlayerBetAmount);
+            if ((HoldemGame.TheComputerPlayer.PlayerMoney + HoldemGame.TheComputerPlayer.PlayerBetAmount) >= HoldemGame.TheHumanPlayer.PlayerBetAmount) {
+
+                if (HoldemGame.ComputerWinningOdds >= 0) {
 
                     double CurrentPot = Convert.ToDouble(txtbxPot.Text);
 
                     HoldemGame.TheComputerPlayer.Call(HoldemGame.TheHumanPlayer.PlayerBetAmount, ref CurrentPot);
 
                     txtbxPot.Text = CurrentPot.ToString();
+                    MessageBox.Show("WOW");
 
                     ShowComputerCardsAndCompare();
                 }
@@ -3697,6 +3701,7 @@ namespace TexasHoldem {
             }
             else {
 
+                MessageBox.Show("Worse");
                 HoldemGame.TheComputerPlayer.Fold();
 
                 HoldemGame.TheHumanPlayer.PlayerMoney += Convert.ToDouble(txtbxPot.Text) - 10;
@@ -3783,7 +3788,6 @@ namespace TexasHoldem {
             }
             else
             {
-                MessageBox.Show("FUCK"+HoldemGame.ComputerWinningOdds);
                 PlayerLoses();
 
             }
