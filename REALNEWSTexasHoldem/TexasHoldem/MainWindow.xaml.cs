@@ -28,6 +28,7 @@ namespace TexasHoldem {
             InitializeComponent();
             HoldemGame.ShuffleDeck();
             HoldemGame.Odds();
+
             txtbxPlayerOddsOfWinning.Text = HoldemGame.HumanWinningOdds.ToString();
             txtbxPlayerOddsOfLosing.Text = HoldemGame.HumanLosingOdds.ToString();
             txtbxPlayerOddsDraw.Text = HoldemGame.HumanDrawingOdds.ToString();
