@@ -767,11 +767,6 @@ namespace TexasHoldem {
                 cards[6]= what[i, 6];
 
                 Comb tempCom = new Comb(cards);
-                foreach(var tempTemp in tempCom.PokerHands)
-                {
-                    if (tempTemp.Type == PokerType.StraightFlush)
-                        Console.WriteLine("RAIN DRAPO\t"+tempTemp.value);
-                }
                 if (tempCom < PlayerComb)
                     wins++;
                 else if (tempCom > PlayerComb)
