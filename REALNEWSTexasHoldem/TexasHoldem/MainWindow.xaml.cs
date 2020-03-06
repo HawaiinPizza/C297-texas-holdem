@@ -3747,9 +3747,6 @@ namespace TexasHoldem {
 
         private void ShowComputerCardsAndCompare() {
 
-            txtbxPlayerOddsOfWinning.Text = HoldemGame.HumanWinningOdds.ToString();
-            txtbxPlayerOddsOfLosing.Text = HoldemGame.HumanLosingOdds.ToString();
-            txtbxPlayerOddsDraw.Text = HoldemGame.HumanDrawingOdds.ToString();
 
             Card[] Intro = new Card[7];
             Intro[0] =HoldemGame.Field[0];
@@ -3786,7 +3783,6 @@ namespace TexasHoldem {
 
             if (PlayerComb > ComputerComb) {
                 PlayerWins();
-
             }
             else if(PlayerComb == ComputerComb)
             {
@@ -3796,7 +3792,6 @@ namespace TexasHoldem {
             else
             {
                 PlayerLoses();
-
             }
                 
             HoldemGame.ShuffleDeck();
@@ -3804,6 +3799,9 @@ namespace TexasHoldem {
             ShowHumanPlayerCards();
             ShowFieldCards();
             ShowComputerPlayerCards();
+            txtbxPlayerOddsOfWinning.Text = HoldemGame.HumanWinningOdds.ToString();
+            txtbxPlayerOddsOfLosing.Text = HoldemGame.HumanLosingOdds.ToString();
+            txtbxPlayerOddsDraw.Text = HoldemGame.HumanDrawingOdds.ToString();
         }
     }
 }
