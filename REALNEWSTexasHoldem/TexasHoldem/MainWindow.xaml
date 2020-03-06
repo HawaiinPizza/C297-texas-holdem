@@ -30,7 +30,6 @@
 
         <Button x:Name="BtnRaise" Content="Raise" HorizontalAlignment="Left" Margin="508,500,0,0" VerticalAlignment="Top" FontSize="16" Width="64" Background="#FFAEF0A3" BorderBrush="Black" Click="BtnRaise_Click"/>
         <Button x:Name="BtnFold" Content="Fold" HorizontalAlignment="Left" Margin="508,542,0,0" VerticalAlignment="Top" FontSize="16" Width="64" Background="#FFAEF0A3" BorderBrush="Black" Click="BtnFold_Click"/>
-        <Button x:Name="BtnNeither" Content="Neither" HorizontalAlignment="Left" Margin="508,585,0,0" VerticalAlignment="Top" FontSize="16" Width="83" Background="#FFAEF0A3" BorderBrush="Black" Click="BtnNeither_Click"/>
 
         <Label Content="Pot:" HorizontalAlignment="Left" Margin="518,447,0,0" VerticalAlignment="Top" FontSize="14"/>
         <TextBox x:Name="txtbxPot" HorizontalAlignment="Left" Margin="556,452,0,0" Text="20.0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" FontSize="14" Background="#FFAEF0A3" BorderBrush="Black" IsReadOnly="True" SelectionBrush="Black"/>

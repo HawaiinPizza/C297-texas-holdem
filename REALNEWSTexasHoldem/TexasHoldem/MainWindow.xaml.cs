@@ -3552,13 +3552,6 @@ namespace TexasHoldem {
             }
         }
 
-        private void BtnNeither_Click(object sender, RoutedEventArgs e) {
-
-            HoldemGame.TheHumanPlayer.IsMyTurn = false;
-            HoldemGame.TheComputerPlayer.IsMyTurn = true;
-
-            ComputerTurnIfPlayerNeitherFoldsNorRaises();
-        }
 
         private void PlayerWins() {
 
@@ -3739,13 +3732,6 @@ namespace TexasHoldem {
             HoldemGame.TheComputerPlayer.IsMyTurn = false;
         }
 
-        private void ComputerTurnIfPlayerNeitherFoldsNorRaises() {
-
-            ShowComputerCardsAndCompare();
-
-            HoldemGame.TheHumanPlayer.IsMyTurn = true;
-            HoldemGame.TheComputerPlayer.IsMyTurn = false;
-        }
 
         private void ShowComputerCardsAndCompare() {
 
@@ -3794,6 +3780,7 @@ namespace TexasHoldem {
             else
             {
                 PlayerLoses();
+                MessageBox.Show("WH");
             }
                 
             HoldemGame.ShuffleDeck();
