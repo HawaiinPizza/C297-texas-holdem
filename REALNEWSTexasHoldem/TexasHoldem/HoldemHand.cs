@@ -752,8 +752,6 @@ namespace TexasHoldem {
             {
                 if (PlayerComb < PlayerCombs[i])
                     PlayerComb = PlayerCombs[i];
-
-
             }
             for(int i=0; i<990; i++)
             {
@@ -1055,6 +1053,7 @@ namespace TexasHoldem {
             }
             HumanWinningOdds= wins;
             HumanLosingOdds= loses;
+            ComputerWinningOdds = loses;
             HumanDrawingOdds= draws;
             //Console.writeline("Wins "+wins + "\tLoses " + loses + "\tDraws " + draws + "\t Total size"+(wins+loses+draws));
 

@@ -3561,7 +3561,79 @@ namespace TexasHoldem {
             ComputerTurnIfPlayerNeitherFoldsNorRaises();
         }
 
+        private void PlayerWins() {
+
+            HoldemGame.TheComputerPlayer.PlayerMoney += Convert.ToDouble(txtbxPot.Text) + 10;
+            HoldemGame.TheComputerPlayer.PlayerBetAmount = 10.0;
+
+            txtbxComputerMoney.Text = HoldemGame.TheComputerPlayer.PlayerMoney.ToString();
+            txtbxComputerBet.Text = HoldemGame.TheComputerPlayer.PlayerBetAmount.ToString();
+
+            txtbxPot.Text = Convert.ToString(HoldemGame.TheComputerPlayer.PlayerBetAmount + HoldemGame.TheHumanPlayer.PlayerBetAmount);
+
+            HoldemGame.ShuffleDeck();
+            HoldemGame.Odds();
+
+            HoldemGame.TheHumanPlayer.IsMyTurn = true;
+            HoldemGame.TheComputerPlayer.IsMyTurn = false;
+
+            ShowHumanPlayerCards();
+            ShowFieldCards();
+            ShowComputerPlayerCards();
+
+            txtbxPlayerOddsOfWinning.Text = HoldemGame.HumanWinningOdds.ToString();
+            txtbxPlayerOddsOfLosing.Text = HoldemGame.HumanLosingOdds.ToString();
+            txtbxPlayerOddsDraw.Text = HoldemGame.HumanDrawingOdds.ToString();
+        }
+        private void PlayerDraws() {
+
+            HoldemGame.TheComputerPlayer.PlayerMoney += Convert.ToDouble(txtbxPot.Text) ;
+            HoldemGame.TheComputerPlayer.PlayerBetAmount = 10.0;
+
+            txtbxComputerMoney.Text = HoldemGame.TheComputerPlayer.PlayerMoney.ToString();
+            txtbxComputerBet.Text = HoldemGame.TheComputerPlayer.PlayerBetAmount.ToString();
+
+            txtbxPot.Text = Convert.ToString(HoldemGame.TheComputerPlayer.PlayerBetAmount + HoldemGame.TheHumanPlayer.PlayerBetAmount);
+
+            HoldemGame.ShuffleDeck();
+            HoldemGame.Odds();
+
+            HoldemGame.TheHumanPlayer.IsMyTurn = true;
+            HoldemGame.TheComputerPlayer.IsMyTurn = false;
+
+            ShowHumanPlayerCards();
+            ShowFieldCards();
+            ShowComputerPlayerCards();
+
+            txtbxPlayerOddsOfWinning.Text = HoldemGame.HumanWinningOdds.ToString();
+            txtbxPlayerOddsOfLosing.Text = HoldemGame.HumanLosingOdds.ToString();
+            txtbxPlayerOddsDraw.Text = HoldemGame.HumanDrawingOdds.ToString();
+        }
         private void ComputerTurnIfPlayerFolds() {
+
+            HoldemGame.TheComputerPlayer.PlayerMoney += Convert.ToDouble(txtbxPot.Text) - 10;
+            HoldemGame.TheComputerPlayer.PlayerBetAmount = 10.0;
+
+            txtbxComputerMoney.Text = HoldemGame.TheComputerPlayer.PlayerMoney.ToString();
+            txtbxComputerBet.Text = HoldemGame.TheComputerPlayer.PlayerBetAmount.ToString();
+
+            txtbxPot.Text = Convert.ToString(HoldemGame.TheComputerPlayer.PlayerBetAmount + HoldemGame.TheHumanPlayer.PlayerBetAmount);
+
+            HoldemGame.ShuffleDeck();
+            HoldemGame.Odds();
+
+            HoldemGame.TheHumanPlayer.IsMyTurn = true;
+            HoldemGame.TheComputerPlayer.IsMyTurn = false;
+
+            ShowHumanPlayerCards();
+            ShowFieldCards();
+            ShowComputerPlayerCards();
+
+            txtbxPlayerOddsOfWinning.Text = HoldemGame.HumanWinningOdds.ToString();
+            txtbxPlayerOddsOfLosing.Text = HoldemGame.HumanLosingOdds.ToString();
+            txtbxPlayerOddsDraw.Text = HoldemGame.HumanDrawingOdds.ToString();
+        }
+        private void PlayerLoses() {
 
             HoldemGame.TheComputerPlayer.PlayerMoney += Convert.ToDouble(txtbxPot.Text) - 10;
             HoldemGame.TheComputerPlayer.PlayerBetAmount = 10.0;
@@ -3598,6 +3670,7 @@ namespace TexasHoldem {
 
                     txtbxPot.Text = CurrentPot.ToString();
 
+                    Console.WriteLine("Small dick");
                     ShowComputerCardsAndCompare();
                 }
                 else {
@@ -3671,6 +3744,59 @@ namespace TexasHoldem {
             txtbxPlayerOddsOfWinning.Text = HoldemGame.HumanWinningOdds.ToString();
             txtbxPlayerOddsOfLosing.Text = HoldemGame.HumanLosingOdds.ToString();
             txtbxPlayerOddsDraw.Text = HoldemGame.HumanDrawingOdds.ToString();
+
+            Card[] Intro = new Card[7];
+            Intro[0] =HoldemGame.Field[0];
+            Intro[1] =HoldemGame.Field[1];
+            Intro[2] =HoldemGame.Field[2];
+            Intro[3] =HoldemGame.Field[3];
+            Intro[4] =HoldemGame.Field[4];
+            Intro[5] =HoldemGame.PlayerHand[0];
+            Intro[6] =HoldemGame.PlayerHand[1];
+
+
+            Comb[] PlayerCombs = new Comb[21];
+            PlayerCombs = HoldemGame.GetCombs(Intro);
+            Comb PlayerComb = new Comb();
+            PlayerComb = PlayerCombs[0];
+            for (int i = 0; i < 21; i++)
+            {
+                if (PlayerComb < PlayerCombs[i])
+                    PlayerComb = PlayerCombs[i];
+
+            }
+
+            Intro[5] =HoldemGame.ComputerHand[0];
+            Intro[6] =HoldemGame.ComputerHand[1];
+            Comb[] ComputerCombs = new Comb[21];
+            ComputerCombs = HoldemGame.GetCombs(Intro);
+            Comb ComputerComb = new Comb();
+            ComputerComb = ComputerCombs[0];
+            for (int i = 0; i < 21; i++)
+            {
+                if (ComputerComb < ComputerCombs[i])
+                    ComputerComb = ComputerCombs[i];
+            }
+
+            if (PlayerComb > ComputerComb) {
+                PlayerWins();
+
+            }
+            else if(PlayerComb == ComputerComb)
+            {
+                PlayerDraws();
+
+            }
+            else
+            {
+                PlayerLoses();
+
+            }
+                
+
+            //ComputerHand = new Card[2];
+            //public Card[] PlayerHand = new Card[2];
+            //public Card[] Field = new Card[2];
 
             ShowHumanPlayerCards();
             ShowFieldCards();
