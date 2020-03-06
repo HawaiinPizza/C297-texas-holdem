@@ -3668,7 +3668,7 @@ namespace TexasHoldem {
 
             if ((HoldemGame.TheComputerPlayer.PlayerMoney + HoldemGame.TheComputerPlayer.PlayerBetAmount) !< HoldemGame.TheHumanPlayer.PlayerBetAmount) {
                 
-                if (HoldemGame.ComputerWinningOdds >= 50.0) {
+                if (HoldemGame.ComputerWinningOdds >= 1) {
 
                     double CurrentPot = Convert.ToDouble(txtbxPot.Text);
 
@@ -3676,10 +3676,10 @@ namespace TexasHoldem {
 
                     txtbxPot.Text = CurrentPot.ToString();
 
-                    Console.WriteLine("Small dick");
-                    CompareCards();
+                    ShowComputerCardsAndCompare();
                 }
                 else {
+                    MessageBox.Show("CPU odds"+ HoldemGame.ComputerWinningOdds);
 
                     HoldemGame.TheComputerPlayer.Fold();
 
@@ -3740,10 +3740,7 @@ namespace TexasHoldem {
             HoldemGame.TheComputerPlayer.IsMyTurn = false;
         }
 
-        private void CompareCards() {
-
-            HoldemGame.ShuffleDeck();
-            HoldemGame.Odds();
+        private void ShowComputerCardsAndCompare() {
 
             txtbxPlayerOddsOfWinning.Text = HoldemGame.HumanWinningOdds.ToString();
             txtbxPlayerOddsOfLosing.Text = HoldemGame.HumanLosingOdds.ToString();
@@ -3793,15 +3790,13 @@ namespace TexasHoldem {
             }
             else
             {
+                MessageBox.Show("FUCK"+HoldemGame.ComputerWinningOdds);
                 PlayerLoses();
 
             }
                 
-
-            //ComputerHand = new Card[2];
-            //public Card[] PlayerHand = new Card[2];
-            //public Card[] Field = new Card[2];
-
+            HoldemGame.ShuffleDeck();
+            HoldemGame.Odds();
             ShowHumanPlayerCards();
             ShowFieldCards();
             ShowComputerPlayerCards();
